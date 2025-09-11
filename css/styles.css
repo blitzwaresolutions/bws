@@ -159,3 +159,20 @@ footer a {
 footer a:hover {
   color: #66a3ff;
 }
+
+/* Make feature cards behave as clickable blocks */
+.features .feature-box {
+  display: block;
+  position: relative;   /* establish stacking context */
+  z-index: 2;           /* keep above any overlays */
+  color: inherit;
+  text-decoration: none;
+}
+.features .feature-box:hover { text-decoration: none; }
+
+/* If you use a centered hover image, don't let it steal clicks */
+.image-container { pointer-events: none; z-index: 1; }
+
+/* Optional: ensure footer stays dark (unrelated to links, but handy) */
+footer { background:#000; color:#fff; }
+footer a { color:#9ecbff; }
