@@ -1,137 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Solutions - BlitzWare Solutions</title>
-    <style>
-        body {
-            background-color: #000; /* Set the entire background to black */
-            color: #FFF; /* White text for readability */
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            text-align: center;
-            min-height: 100vh; /* Ensure the body takes full height */
-            display: flex;
-            flex-direction: column; /* To allow footer to stay at the bottom */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services – BlitzWare Solutions</title>
 
-        .header {
-            padding: 20px;
-            background-color: #111; /* Darker header */
-        }
-
-        .header h1 {
-            font-size: 3em;
-            margin: 0; /* Remove default margin for better spacing */
-        }
-
-        .header p {
-            font-size: 1.2em;
-            margin-top: 10px;
-        }
-<header>
-<!-- Hamburger Menu -->
-<div class="hamburger" onclick="toggleMenu()">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-
-<nav id="menu-panel" class="menu-panel">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="consult.html">Consultation</a>
-  <a href="solutions.html">Solutions</a>
-  <a href="about.html">About</a>
-  <a href="privacy.html">Privacy Policy</a>
-  <a href="terms.html">Terms of Service</a>
-</nav>
-
-</header>
-
-        .content {
-            padding: 40px 20px;
-            flex-grow: 1; /* This will take the remaining space */
-            background-color: #000; /* Ensuring the content area is black */
-        }
-
-        .content h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-
-        .solution-box {
-            background-color: #111; /* Dark box for each solution */
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .solution-box:hover {
-            transform: scale(1.05); /* Slight hover effect */
-        }
-
-        footer {
-            background-color: #111; /* Dark footer */
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        footer p {
-            margin: 5px 0;
-        }
-
-        footer a {
-            color: #FFF;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: #CCC;
-        }
-    </style>
+  <!-- Icons + Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="header">
-        <h1>Our Solutions</h1>
-        <p>Comprehensive IT & Cybersecurity Services</p>
+  <!-- HEADER -->
+  <header class="header">
+    <!-- Back button (true back) -->
+    <a href="javascript:history.back()" class="back-button" aria-label="Go Back">
+      <i class="fas fa-arrow-left"></i> Back
+    </a>
+
+    <!-- Hamburger Menu (per page) -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
 
-    <div class="content">
-        <h2>Explore Our Tailored Solutions</h2>
-        <div class="solution-box">
-            <h3>Network Security & Monitoring</h3>
-            <p>24/7 proactive threat detection and network monitoring to keep your business secure.</p>
-        </div>
-        <div class="solution-box">
-            <h3>Incident Response & Recovery</h3>
-            <p>Lightning-fast incident response to mitigate damage and ensure a full recovery.</p>
-        </div>
-        <div class="solution-box">
-            <h3>Custom AI Integration</h3>
-            <p>Leverage the power of AI to enhance your business operations and security protocols.</p>
-        </div>
-        <div class="solution-box">
-            <h3>Penetration Testing</h3>
-            <p>In-depth testing to identify vulnerabilities before malicious actors can exploit them.</p>
-        </div>
-        <!-- Add more solutions as needed -->
-    </div>
+    <!-- Vertical dropdown -->
+    <nav id="menu-panel" class="menu-panel" aria-hidden="true">
+      <a href="index.html">Home</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="consult.html">Consultation</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="security.html">Security</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="mailto:blitzwaresolutions@gmail.com">Email Us</a>
+    </nav>
 
-    <footer>
-        <p>&copy; 2025 BlitzWare Solutions. All rights reserved.</p>
-        <p><a href="mailto:info@blitzwaresolutions.com"><i class="fas fa-envelope"></i> Email Us</a></p>
-        <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
-    </footer>
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById("menu-panel");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-  }
-</script>
+    <div class="header-content">
+      <h1>BlitzWare Solutions</h1>
+      <h5><i>IT and Cybersecurity Consulting Services</i></h5>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="content">
+    <section class="intro">
+      <h2>Our Services</h2>
+      <p>Comprehensive, real-world cybersecurity and IT solutions tailored to your mission.</p>
+    </section>
+
+    <!-- Use existing .feature-box styling for consistent look -->
+    <section class="features">
+      <div class="feature-box">
+        <div class="icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Network Security & Monitoring</h3>
+        <p>24/7 proactive visibility, tuned detections, and attack surface reduction.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="icon"><i class="fas fa-bug"></i></div>
+        <h3>Penetration Testing</h3>
+        <p>Red-team style assessments to identify and validate exploitable weaknesses.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="icon"><i class="fas fa-sync-alt"></i></div>
+        <h3>Incident Response</h3>
+        <p>Containment, forensics, recovery, and lessons learned—without the chaos.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="icon"><i class="fas fa-server"></i></div>
+        <h3>Infrastructure Hardening</h3>
+        <p>CIS baselines, secure configs, privileged access controls, and patch strategy.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="icon"><i class="fas fa-user-shield"></i></div>
+        <h3>Compliance & Governance</h3>
+        <p>Policy frameworks and controls aligned to NIST, ISO, PCI, HIPAA, and more.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="icon"><i class="fas fa-robot"></i></div>
+        <h3>Custom AI Integration</h3>
+        <p>Automations and ML-driven insight to accelerate security and IT operations.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><a href="mailto:blitzwaresolutions@gmail.com"><i class="fas fa-envelope"></i> Email Us</a></p>
+    <p class="tagline"><i>Providing Professional IT Services Since 2003</i></p>
+    <p class="copy">&copy; 2025 BlitzWare Solutions. All rights reserved.</p>
+    <p class="legal"><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+  </footer>
+
+  <!-- Tiny per-page toggler -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu-panel");
+      const isOpen = menu.style.display === "block";
+      menu.style.display = isOpen ? "none" : "block";
+      menu.setAttribute("aria-hidden", isOpen ? "true" : "false");
+    }
+  </script>
 </body>
 </html>
