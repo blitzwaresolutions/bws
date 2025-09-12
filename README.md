@@ -1,5 +1,5 @@
 # bws
-BlitzWare Solutions support page
+BlitzWare Solutions GitHub page.
 
 This is the official repository for the BlitzWare Solutions website.  
 Built with HTML5, CSS3, and GitHub Pages.
