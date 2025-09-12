@@ -138,3 +138,45 @@ footer a:hover { color: #66a3ff; }
   .features { gap: 12px; }
   .features .feature-box { padding: 16px 14px; }
 }
+
+/* --- Hamburger + Menu (dark, right-side) --- */
+.header { position: relative; }
+
+/* Button */
+.hamburger {
+  position: absolute; right: 14px; top: 14px;
+  width: 42px; height: 38px;
+  background: #0b0b0b; border: 1px solid #1b1b1b; border-radius: 10px;
+  display: grid; place-items: center; gap: 4px; padding: 6px;
+  cursor: pointer; z-index: 1001;
+}
+.hamburger span {
+  display: block; width: 22px; height: 2px; background: #eaeaea; transition: transform .2s ease, opacity .2s ease;
+}
+.hamburger.is-open span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
+.hamburger.is-open span:nth-child(2){ opacity: 0; }
+.hamburger.is-open span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
+
+/* Panel */
+.menu-panel {
+  position: absolute; right: 12px; top: 58px;
+  width: 220px; max-height: 75vh; overflow-y: auto;
+  background: rgba(0,0,0,0.96);
+  border: 1px solid #1b1b1b; border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0,0,0,.6);
+  padding: 10px; display: none; z-index: 1000;
+}
+.menu-panel a {
+  display: block; text-align: left;
+  padding: 10px 12px; margin: 4px 0;
+  color: #dfe9ff; border-radius: 8px;
+}
+.menu-panel a:hover { background: #141a22; color: #9ecbff; }
+
+/* (Optional) show a horizontal menu on wide screens */
+@media (min-width: 900px){
+  .menu-panel { display: flex !important; position: absolute; right: 70px; top: 18px; width: auto; background: transparent; border: 0; box-shadow: none; padding: 0; }
+  .menu-panel a { margin: 0 8px; padding: 8px 10px; background: transparent; }
+  .menu-panel a:hover { background: #111; }
+  .hamburger { display: none; }
+}
