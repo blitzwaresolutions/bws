@@ -235,7 +235,7 @@ footer::before {
   margin: 0 auto;
   width: min(280px, 45vw);
   height: min(280px, 45vw);
-  background: url('img/blitzware-shield.png') center/contain no-repeat;
+  background: url('img/bwslogo1.mp4') center/contain no-repeat;
   opacity: .08;            /* faint watermark */
   filter: grayscale(10%) contrast(120%);
   z-index: -1;
