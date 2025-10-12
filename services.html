@@ -11,38 +11,31 @@
 </head>
 <body>
   <!-- HEADER -->
-  <header class="header">
-    <!-- Back button (true back) -->
-    <a href="javascript:history.back()" class="back-button" aria-label="Go Back">
-      <i class="fas fa-arrow-left"></i> Back
-    </a>
+<header class="header">
+  <!-- ⚡ BlitzWare Animated Logo -->
+  <video autoplay muted loop playsinline class="logo-video" poster="img/logo.png">
+    <source src="img/bwslogo1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-    <!-- Hamburger Menu (per page) -->
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+  <!-- Hamburger Menu -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
-    <!-- Vertical dropdown -->
-    <nav id="menu-panel" class="menu-panel" aria-hidden="true">
-      <a href="index.html">Home</a>
-      <a href="services.html" class="active">Services</a>
-      <a href="consult.html">Consultation</a>
-      <a href="solutions.html">Solutions</a>
-      <a href="security.html">Security</a>
-      <a href="about.html">About</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="mailto:blitzwaresolutions@gmail.com">Email Us</a>
-    </nav>
-
-    <div class="header-content">
-      <h1>BlitzWare Solutions</h1>
-      <h5><i>IT and Cybersecurity Consulting Services</i></h5>
-    </div>
-  </header>
-
+  <!-- Navigation Panel -->
+  <nav id="menu-panel" class="menu-panel">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="consult.html">Consultation</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </nav>
+</header>
   <!-- MAIN -->
   <main class="content">
     <section class="intro">
