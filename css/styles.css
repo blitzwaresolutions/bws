@@ -266,6 +266,14 @@ footer::before {
   .hero-glow, .hero-shield, .bolt-path { animation: none !important; }
 }
 
+/* ===== Animated/Video Logo =====*/
+.logo-video {
+  width: 250px;      /* Adjust to match your layout */
+  height: auto;
+  display: block;
+  margin: 0 auto;    /* Center horizontally */
+  pointer-events: none; /* So it doesn’t interfere with clicks */
+}
 
 /* ===== Footer ===== */
 footer{
