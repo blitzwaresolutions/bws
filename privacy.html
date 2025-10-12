@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy - BlitzWare Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — BlitzWare Solutions</title>
 
-  <!-- Global Styles & Icons -->
+  <!-- Icons + Global Styles -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -13,73 +13,88 @@
 
   <!-- HEADER -->
   <header class="header">
-    <!-- Back Button -->
-    <button class="back-button" onclick="history.back()">&#8592; Back</button>
+    <!-- Back button (true browser back) -->
+    <a href="javascript:history.back()" class="back-button" aria-label="Go Back" title="Back">
+      <i class="fas fa-arrow-left"></i>
+    </a>
 
     <!-- Animated Logo -->
-    <div class="logo-container">
-      <video autoplay muted loop playsinline class="logo-video">
-        <source src="img/bwslogo01.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
+    <video class="logo-video" autoplay muted loop playsinline preload="metadata" poster="img/logo.png" aria-label="BlitzWare Solutions Logo">
+      <source src="img/bwslogo01.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-    <!-- Hamburger Menu -->
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <!-- Hamburger -->
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
 
-    <nav id="menu-panel" class="menu-panel">
+    <!-- Vertical dropdown menu -->
+    <nav id="menu-panel" class="menu-panel" aria-hidden="true">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="consult.html">Consultation</a>
       <a href="solutions.html">Solutions</a>
       <a href="about.html">About</a>
-      <a href="privacy.html">Privacy Policy</a>
+      <a href="privacy.html" class="active">Privacy Policy</a>
       <a href="terms.html">Terms of Service</a>
+      <a href="mailto:blitzwaresolutions@gmail.com">Email Us</a>
     </nav>
+
+    <div class="header-content">
+      <h1>Privacy Policy</h1>
+      <h5><i>BlitzWare Solutions</i></h5>
+    </div>
   </header>
 
-  <!-- CONTENT -->
-  <main class="content">
-    <section class="intro">
-      <h2>Privacy Policy</h2>
-      <p>Last updated: October 2025</p>
-    </section>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Privacy Policy</h1>
+    <p>Last Updated: January 1, 2025</p>
+  </section>
 
-    <section class="policy">
-      <p>
-        At BlitzWare Solutions, your privacy is extremely important to us. This Privacy Policy outlines the types of personal information we collect, how it’s used, and the steps we take to safeguard your information.
-      </p>
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <div class="card--glass prose">
+      <h2>Overview</h2>
+      <p>We respect your privacy and are committed to protecting it. This policy explains what we collect, why we collect it, and how we safeguard it.</p>
 
-      <h3>1. Information We Collect</h3>
-      <p>
-        We collect minimal personal data — typically just your email if you contact us — to provide services and respond to inquiries.
-      </p>
+      <div class="divider"></div>
 
-      <h3>2. How We Use Information</h3>
-      <p>
-        Any information you provide is used solely for communication and service delivery. We do not sell or share your data with third parties.
-      </p>
+      <h2>Information We Collect</h2>
+      <ul>
+        <li><strong>Contact Info:</strong> If you email us, we receive your email and message content.</li>
+        <li><strong>Diagnostics:</strong> Basic technical logs to keep the site reliable and secure.</li>
+      </ul>
 
-      <h3>3. Data Protection</h3>
-      <p>
-        We use industry-standard security measures to protect against unauthorized access, alteration, disclosure, or destruction of your personal information.
-      </p>
+      <div class="divider"></div>
 
-      <h3>4. Your Rights</h3>
-      <p>
-        You may request to review or delete your personal data at any time by contacting us at 
-        <a href="mailto:blitzwaresolutions@gmail.com">blitzwaresolutions@gmail.com</a>.
-      </p>
+      <h2>How We Use Information</h2>
+      <ul>
+        <li>To respond to inquiries and provide requested information.</li>
+        <li>To maintain security, reliability, and performance of the site.</li>
+      </ul>
 
-      <h3>5. Policy Updates</h3>
-      <p>
-        We may update this Privacy Policy periodically. The updated version will always be posted on this page with the revised date.
-      </p>
-    </section>
+      <div class="divider"></div>
+
+      <h2>Sharing</h2>
+      <p>We do not sell your personal data. We may share limited data with service providers strictly to operate or secure this site.</p>
+
+      <div class="divider"></div>
+
+      <h2>Data Security</h2>
+      <p>We use industry-standard measures to protect your information from unauthorized access, alteration, or loss.</p>
+
+      <div class="divider"></div>
+
+      <h2>Your Choices</h2>
+      <p>You may request access or deletion of your personal information by emailing <a href="mailto:blitzwaresolutions@gmail.com">blitzwaresolutions@gmail.com</a>.</p>
+
+      <div class="divider"></div>
+
+      <h2>Changes</h2>
+      <p>We may update this policy from time to time. The “Last Updated” date reflects the latest revision.</p>
+    </div>
   </main>
 
   <!-- FOOTER -->
@@ -89,9 +104,7 @@
         <i class="fas fa-envelope"></i> Email Us
       </a>
     </p>
-    <p class="tagline">
-      <i>Providing Professional IT Services Since 2003</i>
-    </p>
+    <p class="tagline"><i>Providing Professional IT Services Since 2003</i></p>
     <p class="copy">&copy; 2025 BlitzWare Solutions. All rights reserved.</p>
     <p class="legal">
       <a href="privacy.html">Privacy Policy</a> |
@@ -99,8 +112,15 @@
     </p>
   </footer>
 
-  <!-- JS for Hamburger -->
-  <script src="js/menu.js"></script>
-
+  <!-- Inline toggle to ensure menu works even without js/menu.js -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu-panel');
+      if (!menu) return;
+      const open = menu.style.display === 'block';
+      menu.style.display = open ? 'none' : 'block';
+      menu.setAttribute('aria-hidden', open ? 'true' : 'false');
+    }
+  </script>
 </body>
 </html>
