@@ -2,123 +2,86 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BlitzWare Solutions</title>
-
-  <!-- Icons + Styles -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header-content">
-      <h1>BlitzWare Solutions</h1>
-      <h5><i>IT and Cybersecurity Consulting Services</i></h5>
+  <!-- Header with Hamburger Menu -->
+  <header>
+    <button class="back-button" onclick="history.back()">&#8592; Back</button>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
 
-<!-- ⚡ BlitzWare Animated Logo -->
-<video autoplay muted loop playsinline class="logo-video" poster="img/logo.png">
-  <source src="img/bwslogo01.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-    <!-- Hamburger (always visible) -->
-    <button id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-
-    <!-- Vertical dropdown (no horizontal mode) -->
-    <nav id="nav-links" class="nav-links" aria-hidden="true">
-      <a href="index.html"><i class="fas fa-home"></i> Home</a>
-      <a href="services.html"><i class="fas fa-shield-alt"></i> Services</a>
-      <a href="consult.html"><i class="fas fa-briefcase"></i> Consultation</a>
-      <a href="solutions.html"><i class="fas fa-cogs"></i> Solutions</a>
-      <a href="about.html"><i class="fas fa-user"></i> About</a>
-      <a href="privacy.html"><i class="fas fa-user-shield"></i> Privacy</a>
-      <a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a>
-      <a href="mailto:blitzwaresolutions@gmail.com"><i class="fas fa-envelope"></i> Email Us</a>
+    <nav id="menu-panel" class="menu-panel">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="consult.html">Consultation</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
     </nav>
+
+    <!-- Animated Logo -->
+    <div class="logo-container">
+      <video autoplay muted loop playsinline class="logo-video">
+        <source src="img/bwslogo01.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <h1>BlitzWare Solutions</h1>
+    <p><i>IT and Cybersecurity Consulting Services</i></p>
   </header>
 
-  <!-- MAIN -->
-  <main class="content">
-    <section class="intro">
-      <h6><i>Connecting You To The Future.</i></h6>
-    </section>
+  <!-- Feature Boxes -->
+  <section class="features">
+    <div class="feature-box">
+      <video class="icon-video" autoplay muted loop playsinline>
+        <source src="img/bwsred1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <h3>Advanced Security</h3>
+      <p>State-of-the-art solutions to safeguard your data and harden your systems.</p>
+    </div>
 
-    <!-- Feature cards (links) -->
-    <!-- Advanced Security (with MP4 icon) -->
-<div class="feature-box">
-  <video class="icon-video" autoplay muted loop playsinline>
-    <source src="img/bwsred1.mp4" type="video/mp4">
-  </video>
-  <h3>Advanced Security</h3>
-  <p>State-of-the-art solutions to safeguard your data and harden your systems.</p>
-</div>
-    <section class="features y-layout">
-      <a class="feature-box card-1" href="services.html" aria-label="Advanced Security Services">
-        <div class="icon"><i class="fas fa-shield-alt"></i></div>
-        <h3>Advanced Security</h3>
-        <p>State-of-the-art solutions to safeguard your data and harden your systems.</p>
-      </a>
+    <div class="feature-box">
+      <i class="fas fa-briefcase fa-2x"></i>
+      <h3>Expert Consultation</h3>
+      <p>Guidance from industry veterans to navigate complex challenges.</p>
+    </div>
 
-      <a class="feature-box card-2" href="consult.html" aria-label="Expert Consultation">
-        <div class="icon"><i class="fas fa-briefcase"></i></div>
-        <h3>Expert Consultation</h3>
-        <p>Guidance from industry veterans to navigate complex challenges.</p>
-      </a>
+    <div class="feature-box">
+      <i class="fas fa-cogs fa-2x"></i>
+      <h3>Custom Solutions</h3>
+      <p>Tailored cybersecurity solutions for your unique business needs.</p>
+    </div>
+  </section>
 
-      <a class="feature-box card-3" href="solutions.html" aria-label="Custom Solutions">
-        <div class="icon"><i class="fas fa-cogs"></i></div>
-        <h3>Custom Solutions</h3>
-        <p>Strategies engineered to meet your unique mission requirements.</p>
-      </a>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
   <footer>
-    <p><a href="mailto:blitzwaresolutions@gmail.com"><i class="fas fa-envelope"></i> Email Us</a></p>
-    <p class="tagline"><i>Connecting you to the future.</i></p>
+    <p>
+      <a href="mailto:blitzwaresolutions@gmail.com">
+        <i class="fas fa-envelope"></i> Email Us
+      </a>
+    </p>
+    <p class="tagline"><i>Providing Professional IT Services Since 2003</i></p>
     <p class="copy">&copy; 2025 BlitzWare Solutions. All rights reserved.</p>
-    <p class="legal"><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+    <p class="legal">
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Terms of Service</a>
+    </p>
   </footer>
 
-  <!-- Tiny JS toggler -->
   <script>
-  (function(){
-    const btn = document.getElementById('hamburger');
-    const nav = document.getElementById('nav-links');
-    if(!btn || !nav) return;
-
-    const close = () => {
-      nav.classList.remove('open');
-      btn.classList.remove('is-open');
-      btn.setAttribute('aria-expanded', 'false');
-      nav.setAttribute('aria-hidden', 'true');
-    };
-    const toggle = () => {
-      const o = nav.classList.toggle('open');
-      btn.classList.toggle('is-open', o);
-      btn.setAttribute('aria-expanded', o ? 'true' : 'false');
-      nav.setAttribute('aria-hidden', o ? 'false' : 'true');
-    };
-
-    close();
-    btn.addEventListener('click', toggle);
-    document.addEventListener('click', (e)=> {
-      if (!nav.contains(e.target) && !btn.contains(e.target)) close();
-    });
-    document.addEventListener('keydown', (e)=> { if (e.key === 'Escape') close(); });
-  })();
+    function toggleMenu() {
+      const menu = document.getElementById("menu-panel");
+      menu.classList.toggle("open");
+    }
   </script>
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById("menu-panel");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-  }
-</script>
 </body>
 </html>
