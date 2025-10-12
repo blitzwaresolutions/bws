@@ -1,77 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Hamburger -->
-<div class="hamburger" onclick="toggleMenu()">
-  <span></span><span></span><span></span>
-</div>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terms of Service — BlitzWare Solutions</title>
 
-<!-- Animated Logo -->
-<video autoplay muted loop playsinline class="logo-video" poster="img/logo.png">
-  <source src="img/bwslogo01.webm" type="video/webm">
-  <source src="img/bwslogo01.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-<nav id="menu-panel" class="menu-panel">
-  <a href="index.html" class="active">Home</a>
-  <a href="mission.html">Mission</a>
-  <a href="roadmap.html">Roadmap</a>
-  <a href="updates.html">Dev Updates</a>
-  <a href="support.html">Support</a>
-  <a href="about.html">About</a>
-  <a href="privacy.html">Privacy</a>
-  <a href="terms.html">Terms</a>
-</nav>
-
-  <meta charset="UTF-8">
-  <title>Terms of Service • BlitzWare Solutions</title>
+  <!-- Icons + Global Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Favicon (optional) -->
+  <!-- <link rel="icon" type="image/png" href="img/blitzware-shield.png"> -->
 </head>
 <body>
+  <!-- HEADER (global) -->
   <header class="header">
-    <h1>Terms of Service</h1>
+    <!-- Back button (true browser back) -->
+    <a href="javascript:history.back()" class="back-button" aria-label="Go Back" title="Back">
+      <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <!-- Animated Logo -->
+    <video class="logo-video" autoplay muted loop playsinline preload="metadata" poster="img/logo.png" aria-label="BlitzWare Solutions Logo">
+      <source src="img/bwslogo01.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Hamburger -->
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Vertical dropdown menu -->
+    <nav id="menu-panel" class="menu-panel" aria-hidden="true">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="consult.html">Consultation</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html" class="active">Terms of Service</a>
+    </nav>
+
+    <!-- Optional header text (can remove if you want just the logo) -->
+    <div class="header-content">
+      <h1>Terms of Service</h1>
+      <h5><i>BlitzWare Solutions</i></h5>
+    </div>
   </header>
-  <main class="content">
+
+  <!-- HERO (uses your global styles if present; harmless if not) -->
+  <section class="hero">
+    <h1>Terms of Service</h1>
     <p>Effective Date: January 1, 2025</p>
-    <h2>Acceptance of Terms</h2>
-    <p>By using this website, you agree to these terms. If you do not agree, you must discontinue use immediately.</p>
+  </section>
 
-    <h2>Use of Services</h2>
-    <p>You agree not to misuse BlitzWare Solutions services or engage in illegal activities through our platform.</p>
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <div class="card--glass prose">
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing or using this website and any related services (the “Service”), you agree to be bound by these Terms of Service (“Terms”). If you do not agree, please do not use the Service.</p>
 
-    <h2>Disclaimer</h2>
-    <p>Services are provided "as is" without warranties of any kind. BlitzWare Solutions does not guarantee uninterrupted or error-free operation.</p>
+      <div class="divider"></div>
 
-    <h2>Limitation of Liability</h2>
-    <p>To the maximum extent permitted by law, BlitzWare Solutions is not liable for damages arising from your use of our website or services.</p>
+      <h2>2. Description of the Service</h2>
+      <p>The Service may include informational pages, product or project updates, communications tools, and related resources. Features may change as improvements are made.</p>
+
+      <div class="divider"></div>
+
+      <h2>3. Eligibility & Account Responsibilities</h2>
+      <ul>
+        <li>You are responsible for any activity under your access and for safeguarding any credentials you use.</li>
+        <li>You agree to provide accurate information and use the Service in compliance with applicable laws.</li>
+      </ul>
+
+      <div class="divider"></div>
+
+      <h2>4. User Content & License</h2>
+      <p>You retain any rights you have to content you submit. By submitting content, you grant BlitzWare Solutions a limited, non-exclusive, worldwide license to host, process, and display that content solely to operate, maintain, and improve the Service. Please do not submit confidential or sensitive information unless requested and secured through an approved channel.</p>
+
+      <div class="divider"></div>
+
+      <h2>5. Privacy</h2>
+      <p>Your use of the Service is also governed by our <a href="privacy.html">Privacy Policy</a>. By using the Service, you consent to the collection and use of information as described there.</p>
+
+      <div class="divider"></div>
+
+      <h2>6. Acceptable Use</h2>
+      <ul>
+        <li>Do not interfere with, disrupt, or negatively impact the Service or other users.</li>
+        <li>Do not attempt unauthorized access, reverse engineering, or data scraping.</li>
+        <li>Do not upload or distribute malware, spam, or illegal content.</li>
+      </ul>
+
+      <div class="divider"></div>
+
+      <h2>7. Availability & Modifications</h2>
+      <p>We may update, suspend, or discontinue any part of the Service at any time. We may also modify these Terms; continued use after changes constitutes acceptance of the updated Terms.</p>
+
+      <div class="divider"></div>
+
+      <h2>8. Disclaimers</h2>
+      <p>The Service is provided “as is” and “as available.” BlitzWare Solutions disclaims all warranties, express or implied, including merchantability, fitness for a particular purpose, and non-infringement. Information may be subject to errors, delays, or interruptions.</p>
+
+      <div class="divider"></div>
+
+      <h2>9. Limitation of Liability</h2>
+      <p>To the maximum extent permitted by law, BlitzWare Solutions shall not be liable for any indirect, incidental, special, consequential, or exemplary damages, or for loss of profits, data, goodwill, or other intangible losses resulting from your use of or inability to use the Service.</p>
+
+      <div class="divider"></div>
+
+      <h2>10. Indemnification</h2>
+      <p>You agree to indemnify and hold harmless BlitzWare Solutions and its affiliates from any claims, liabilities, damages, losses, and expenses arising from your use of the Service or violation of these Terms.</p>
+
+      <div class="divider"></div>
+
+      <h2>11. Governing Law</h2>
+      <p>These Terms are governed by the laws of the jurisdiction where BlitzWare Solutions operates, without regard to conflict of law principles.</p>
+
+      <div class="divider"></div>
+
+      <h2>12. Contact</h2>
+      <p>For questions about these Terms, contact <a href="mailto:blitzwaresolutions@gmail.com">blitzwaresolutions@gmail.com</a>.</p>
+    </div>
   </main>
-    <footer>
+
+  <!-- FOOTER -->
+  <footer>
     <p>
       <a href="mailto:blitzwaresolutions@gmail.com">
         <i class="fas fa-envelope"></i> Email Us
       </a>
     </p>
-    <p class="tagline">
-      <i>Connecting you to the future.</i>
-    </p>
+    <p class="tagline"><i>Providing Professional IT Services Since 2003</i></p>
     <p class="copy">&copy; 2025 BlitzWare Solutions. All rights reserved.</p>
     <p class="legal">
       <a href="privacy.html">Privacy Policy</a> |
       <a href="terms.html">Terms of Service</a>
     </p>
   </footer>
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById("menu-panel");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-  }
-</script>
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById("menu-panel");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-  }
-</script>
+
+  <!-- Minimal per-page toggle (safe if js/menu.js is missing) -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu-panel');
+      const open = menu && menu.style.display === 'block';
+      if (menu) {
+        menu.style.display = open ? 'none' : 'block';
+        menu.setAttribute('aria-hidden', open ? 'true' : 'false');
+      }
+    }
+  </script>
+
+  <!-- If you prefer the external script instead, uncomment: -->
+  <!-- <script src="js/menu.js"></script> -->
 </body>
 </html>
