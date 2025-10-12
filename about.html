@@ -36,29 +36,6 @@
   </nav>
 </header>
 
-    <!-- MAIN CONTENT -->
-  <main class="content">
-    <!-- HERO -->
-<section class="hero">
-  <div class="hero-glow"></div>
-
-  <!-- Lightning bolt (SVG so we can animate it cleanly) -->
-  <svg class="bolt" viewBox="0 0 64 128" aria-hidden="true">
-    <!-- Outer glow -->
-    <filter id="bolt-glow">
-      <feGaussianBlur stdDeviation="2.5" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <!-- Bolt path (you can tweak the shape later) -->
-    <path class="bolt-path"
-          d="M32 2 L22 46 H38 L28 92 L48 36 H30 Z"
-          filter="url(#bolt-glow)"/>
-  </svg>
-
   <h1 class="hero-title">BlitzWare Solutions</h1>
   <p class="hero-sub">IT and Cybersecurity Consulting Services</p>
 </section>
