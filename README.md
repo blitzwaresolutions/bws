@@ -9,6 +9,7 @@ Built with HTML5, CSS3, and GitHub Pages.
 - `services.html` – Services
 - `consult.html` – Consultation
 - `solutions.html` – Solutions
+- `blitzweather.html - BlitzWeather
 - `about.html` – About Us
 - `privacy.html` – Privacy Policy
 - `terms.html` – Terms of Service
