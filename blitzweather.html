@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BlitzWeather • BlitzWare Solutions</title>
+
+  <!-- Icons + Global Styles -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- BlitzWeather Page Styles -->
+  <style>
+    /* Background image layer */
+    #blitzweather {
+      position: relative;
+      min-height: 100vh;
+      color: #fff;
+      overflow-x: hidden;
+      background: #000;
+      isolation: isolate;
+    }
+    #blitzweather::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url("img/blitzweather-bg.jpg") center/cover no-repeat;
+      z-index: -2;
+      filter: saturate(1.05) contrast(1.08);
+    }
+    #blitzweather::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: -1;
+    }
+
+    /* BlitzWeather content boxes */
+    .bw-wrap {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 96px 16px 120px;
+    }
+    .bw-card {
+      background: rgba(10, 12, 20, 0.72);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 18px 16px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      margin: 14px 0;
+    }
+    .bw-card h2 {
+      margin: 0 0 8px 0;
+      font-size: 1.15rem;
+    }
+    .bw-card p,
+    .bw-card li {
+      line-height: 1.5;
+      font-size: 0.98rem;
+    }
+    .bw-bullets {
+      margin: 8px 0 0 0;
+      padding-left: 18px;
+    }
+    .bw-hero-title {
+      margin: 6px 0 10px 0;
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .bw-subtitle {
+      margin: 0 0 12px 0;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+    footer {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body id="blitzweather">
+  <!-- ===== HEADER (same as index) ===== -->
+  <header class="header">
+    <div class="header-content">
+      <h1>BlitzWare Solutions</h1>
+      <h5><i>IT and Cybersecurity Consulting Services</i></h5>
+    </div>
+
+    <!-- Hamburger -->
+    <button id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Nav menu -->
+    <nav id="nav-links" class="nav-links" aria-hidden="true">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="services.html"><i class="fas fa-shield-alt"></i> Services</a>
+      <a href="consult.html"><i class="fas fa-briefcase"></i> Consultation</a>
+      <a href="solutions.html"><i class="fas fa-cogs"></i> Solutions</a>
+      <a href="about.html"><i class="fas fa-user"></i> About</a>
+      <a href="privacy.html"><i class="fas fa-user-shield"></i> Privacy</a>
+      <a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a>
+      <a href="mailto:blitzwaresolutions@gmail.com"><i class="fas fa-envelope"></i> Email Us</a>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="content">
+    <div class="bw-wrap">
+      <div class="bw-card">
+        <div class="bw-hero-title">BlitzWeather</div>
+        <p class="bw-subtitle">
+          Faster warnings. Fewer “no one saw it coming” moments. Born from real disasters, tuned for real people.
+        </p>
+      </div>
+
+      <section class="bw-card">
+        <h2>Story</h2>
+        <p>
+          We build for the 0–15 minute window where every second matters. BlitzWeather is engineered to cut
+          signal-to-alert time and surface the <em>right</em> cue when your brain is juggling a dozen others.
+        </p>
+      </section>
+
+      <section class="bw-card">
+        <h2>Details</h2>
+        <ul class="bw-bullets">
+          <li>Live radar + NWS alert overlays for fast visual reads.</li>
+          <li>Edge AI nowcast (0–15 min) in active development.</li>
+          <li>No ads. No tracking. Mission > metrics.</li>
+        </ul>
+      </section>
+
+      <section class="bw-card">
+        <h2>Download</h2>
+        <p>Run the MVP now or grab the latest build when it drops.</p>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER (centered + tagline) ===== -->
+  <footer>
+    <p><a href="mailto:blitzwaresolutions@gmail.com"><i class="fas fa-envelope"></i> Email Us</a></p>
+    <p class="tagline"><i>BlitzWeather by BlitzWare Solutions</i></p>
+    <p class="copy">&copy; 2025 BlitzWare Solutions. All rights reserved.</p>
+    <p class="legal"><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+  </footer>
+
+  <!-- ===== JS toggler (same as index) ===== -->
+  <script>
+  (function(){
+    const btn = document.getElementById('hamburger');
+    const nav = document.getElementById('nav-links');
+    if(!btn || !nav) return;
+
+    const close = () => {
+      nav.classList.remove('open');
+      btn.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+      nav.setAttribute('aria-hidden', 'true');
+    };
+    const toggle = () => {
+      const o = nav.classList.toggle('open');
+      btn.classList.toggle('is-open', o);
+      btn.setAttribute('aria-expanded', o ? 'true' : 'false');
+      nav.setAttribute('aria-hidden', o ? 'false' : 'true');
+    };
+
+    close();
+    btn.addEventListener('click', toggle);
+    document.addEventListener('click', (e)=> {
+      if (!nav.contains(e.target) && !btn.contains(e.target)) close();
+    });
+    document.addEventListener('keydown', (e)=> { if (e.key === 'Escape') close(); });
+  })();
+  </script>
+</body>
+</html>
