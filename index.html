@@ -1,142 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=”en”>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset=”UTF-8” />
+  <meta name=”viewport” content=”width=device-width, initial-scale=1” />
   <title>BlitzWare Solutions</title>
 
-  <!-- Icons + Styles -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="css/styles.css">
-
-  <!-- 🧠 Full-page background video style -->
-  <style>
-    .logo-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1; /* Behind everything */
-    }
-
-    /* Optional overlay for better text contrast */
-    body::after {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 0;
-    }
-
-    /* Make sure all content sits above video + overlay */
-    header, main, footer, nav, .features {
-      position: relative;
-      z-index: 1;
-    }
-  </style>
+  <!—Icons + Styles 
+  <link rel=”stylesheet”
+        Href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css>
+  <link rel=”stylesheet” href=”css/styles.css”>
 </head>
 <body>
-  <!-- HEADER -->
+  <!—HEADER 
 
-  <!-- ⚡ BlitzWare Animated Logo Background -->
-  <video autoplay muted loop playsinline class="logo-video" poster="img/logo.png">
-    <source src="img/bwslogoConn.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <!-- ⚡ BlitzWare Animated Logo 
+    <video autoplay muted loop playsinline class=”logo-video” poster=”img/logo.png”>
+      <source src=”img/bwslogoConn.mp4” type=”video/mp4”>
+      Your browser does not support the video tag.
+    </video>
 
-  <!-- Hamburger (always visible) -->
-  <button id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+    <!—Hamburger (always visible) 
+    <button id=”hamburger” class=”hamburger” aria-label=”Menu” aria-expanded=”false”>
+      <span></span><span></span><span></span>
+    </button>
 
-  <!-- ✅ Updated Nav for /bws/ root -->
-  <nav id="nav-links" class="nav-links" aria-hidden="true">
-    <a href="/bws/index.html"><i class="fas fa-home"></i> Home</a>
+    <!-- ✅ Updated Nav for /bws/ root 
+    <nav id=”nav-links” class=”nav-links” aria-hidden=”true”>
+      <a href=”/bws/index.html”><I class=”fas fa-home”></i> Home</a>
 
-    <!-- Product & Support -->
-    <a href="https://blitzwaresolutions.github.io/bws/blitzweather.html"><i class="fas fa-bolt"></i> BlitzWeather</a>
-    <a href="https://blitzwaresolutions.github.io/supportbws/"><i class="fas fa-mug-hot"></i> Support</a>
+      <!—Product & Support 
+      <a href=https://blitzwaresolutions.github.io/bws/blitzweather.html><I class=”fas fa-bolt”></i> BlitzWeather</a>
+      <a href=https://blitzwaresolutions.github.io/supportbws/><I class=”fas fa-mug-hot”></i> Support</a>
 
-    <!-- Core site -->
-    <a href="https://blitzwaresolutions.github.io/bws/services.html"><i class="fas fa-shield-alt"></i> Services</a>
-    <a href="https://blitzwaresolutions.github.io/bws/consult.html"><i class="fas fa-briefcase"></i> Consultation</a>
-    <a href="https://blitzwaresolutions.github.io/bws/solutions.html"><i class="fas fa-cogs"></i> Solutions</a>
-    <a href="https://blitzwaresolutions.github.io/bws/about.html"><i class="fas fa-user"></i> About</a>
-    <a href="https://blitzwaresolutions.github.io/bws/privacy.html"><i class="fas fa-user-shield"></i> Privacy</a>
-    <a href="https://blitzwaresolutions.github.io/bws/terms.html"><i class="fas fa-file-contract"></i> Terms</a>
-    <a href="mailto:blitzwaresolutions@gmail.com"><i class="fas fa-envelope"></i> Email Us</a>
-  </nav>
+      <!—Core site 
+      <a href=https://blitzwaresolutions.github.io/bws/services.html><I class=”fas fa-shield-alt”></i> Services</a>
+      <a href=https://blitzwaresolutions.github.io/bws/consult.html><I class=”fas fa-briefcase”></i> Consultation</a>
+      <a href=https://blitzwaresolutions.github.io/bws/solutions.html><I class=”fas fa-cogs”></i> Solutions</a>
+      <a href=https://blitzwaresolutions.github.io/bws/about.html><I class=”fas fa-user”></i> About</a>
+      <a href=https://blitzwaresolutions.github.io/bws/privacy.html><I class=”fas fa-user-shield”></i> Privacy</a>
+      <a href=”/bws/terms.html”><I https://blitzwaresolutions.github.io/bws/terms.html”><i class=”fas fa-file-contract”></i> Terms</a>
+      <a href=mailto:blitzwaresolutions@gmail.com><I class=”fas fa-envelope”></i> Email Us</a>
+    </nav>
   </header>
 
-  <!-- Feature cards (links) -->
-  <section class="features y-layout">
-    <a class="feature-box card-1" href="/bws/services.html" aria-label="Advanced Security Services">
-      <div class="icon"><i class="fas fa-shield-alt"></i></div>
-      <h3>Advanced Security</h3>
-      <p>State-of-the-art solutions to safeguard your data and harden your systems.</p>
-    </a>
+    <!—Feature cards (links) 
+    <section class=”features y-layout”>
+      <a class=”feature-box card-1” href=”/bws/services.html” aria-label=”Advanced Security Services”>
+        <div class=”icon”><I class=”fas fa-shield-alt”></i></div>
+        <h3>Advanced Security</h3>
+        <p>State-of-the-art solutions to safeguard your data and harden your systems.</p>
+      </a>
 
-    <a class="feature-box card-2" href="/bws/consult.html" aria-label="Expert Consultation">
-      <div class="icon"><i class="fas fa-briefcase"></i></div>
-      <h3>Expert Consultation</h3>
-      <p>Guidance from industry veterans to navigate complex challenges.</p>
-    </a>
+      <a class=”feature-box card-2” href=”/bws/consult.html” aria-label=”Expert Consultation”>
+        <div class=”icon”><I class=”fas fa-briefcase”></i></div>
+        <h3>Expert Consultation</h3>
+        <p>Guidance from industry veterans to navigate complex challenges.</p>
+      </a>
 
-    <a class="feature-box card-3" href="/bws/solutions.html" aria-label="Custom Solutions">
-      <div class="icon"><i class="fas fa-cogs"></i></div>
-      <h3>Custom Solutions</h3>
-      <p>Strategies engineered to meet your unique mission requirements.</p>
-    </a>
-  </section>
+      <a class=”feature-box card-3” href=”/bws/solutions.html” aria-label=”Custom Solutions”>
+        <div class=”icon”><I class=”fas fa-cogs”></i></div>
+        <h3>Custom Solutions</h3>
+        <p>Strategies engineered to meet your unique mission requirements.</p>
+      </a>
+    </section>
   </main>
 
-  <!-- FOOTER -->
+  <!—FOOTER 
   <footer>
-    <p><a href="mailto:blitzwaresolutions@gmail.com"><i class="fas fa-envelope"></i> Email Us</a></p>
-    <p class="tagline"><i>Connecting you to the future.</i></p>
-    <p class="copy">&copy; 2025 BlitzWare Solutions. All rights reserved.</p>
-    <p class="legal"><a href="/bws/privacy.html">Privacy Policy</a> | <a href="/bws/terms.html">Terms of Service</a></p>
+    <p><a href=mailto:blitzwaresolutions@gmail.com><I class=”fas fa-envelope”></i> Email Us</a></p>
+    <p class=”tagline”><i>Connecting you to the future.</i></p>
+    <p class=”copy”>&copy; 2025 BlitzWare Solutions. All rights reserved.</p>
+    <p class=”legal”><a href=”/bws/privacy.html”>Privacy Policy</a> | <a href=”/bws/terms.html”>Terms of Service</a></p>
   </footer>
 
-  <!-- Tiny JS toggler -->
+  <!—Tiny JS toggler 
   <script>
   (function(){
-    const btn = document.getElementById('hamburger');
-    const nav = document.getElementById('nav-links');
-    if(!btn || !nav) return;
+    Const btn = document.getElementById(‘hamburger’);
+    Const nav = document.getElementById(‘nav-links’);
+    If(!btn || !nav) return;
 
-    const close = () => {
-      nav.classList.remove('open');
-      btn.classList.remove('is-open');
-      btn.setAttribute('aria-expanded', 'false');
-      nav.setAttribute('aria-hidden', 'true');
+    Const close = () => {
+      Nav.classList.remove(‘open’);
+      Btn.classList.remove(‘is-open’);
+      Btn.setAttribute(‘aria-expanded’, ‘false’);
+      Nav.setAttribute(‘aria-hidden’, ‘true’);
     };
-    const toggle = () => {
-      const o = nav.classList.toggle('open');
-      btn.classList.toggle('is-open', o);
-      btn.setAttribute('aria-expanded', o ? 'true' : 'false');
-      nav.setAttribute('aria-hidden', o ? 'false' : 'true');
+    Const toggle = () => {
+      Const o = nav.classList.toggle(‘open’);
+      Btn.classList.toggle(‘is-open’, o);
+      Btn.setAttribute(‘aria-expanded’, o ? ‘true’ : ‘false’);
+      Nav.setAttribute(‘aria-hidden’, o ? ‘false’ : ‘true’);
     };
 
-    close();
-    btn.addEventListener('click', toggle);
-    document.addEventListener('click', (e)=> {
-      if (!nav.contains(e.target) && !btn.contains(e.target)) close();
+    Close();
+    Btn.addEventListener(‘click’, toggle);
+    Document.addEventListener(‘click’, €=> {
+      If (!nav.contains(e.target) && !btn.contains(e.target)) close();
     });
-    document.addEventListener('keydown', (e)=> { if (e.key === 'Escape') close(); });
+    Document.addEventListener(‘keydown’, €=> { if (e.key === ‘Escape’) close(); });
   })();
   </script>
-
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu-panel");
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    Function toggleMenu() {
+      Const menu = document.getElementById(“menu-panel”);
+      Menu.style.display = menu.style.display === “block” ? “none” : “block”;
     }
   </script>
 </body>
