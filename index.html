@@ -12,32 +12,33 @@
 </head>
 <body>
   <!-- HEADER -->
-  <header class="header">
-    <div class="header-content">
-      <h1>BlitzWare Solutions</h1>
-      <h5><i>IT and Cybersecurity Consulting Services</i></h5>
-    </div>
 
-<!-- ⚡ BlitzWare Animated Logo -->
-<video autoplay muted loop playsinline class="logo-video" poster="img/logo.png">
-  <source src="img/bwslogo01.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+  <!-- ⚡ BlitzWare Animated Logo -->
+    <video autoplay muted loop playsinline class="logo-video" poster="img/logo.png">
+      <source src="img/bwslogo01.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
     <!-- Hamburger (always visible) -->
     <button id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
 
-    <!-- Vertical dropdown (no horizontal mode) -->
+    <!-- ✅ Updated Nav for /bws/ root -->
     <nav id="nav-links" class="nav-links" aria-hidden="true">
-      <a href="index.html"><i class="fas fa-home"></i> Home</a>
-      <a href="services.html"><i class="fas fa-shield-alt"></i> Services</a>
-      <a href="consult.html"><i class="fas fa-briefcase"></i> Consultation</a>
-      <a href="solutions.html"><i class="fas fa-cogs"></i> Solutions</a>
-      <a href="about.html"><i class="fas fa-user"></i> About</a>
-      <a href="privacy.html"><i class="fas fa-user-shield"></i> Privacy</a>
-      <a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a>
+      <a href="/bws/index.html"><i class="fas fa-home"></i> Home</a>
+
+      <!-- Product & Support -->
+      <a href="https://blitzwaresolutions.github.io/bws/blitzweather.html"><i class="fas fa-bolt"></i> BlitzWeather</a>
+      <a href="https://blitzwaresolutions.github.io/supportbws/"><i class="fas fa-mug-hot"></i> Support</a>
+
+      <!-- Core site -->
+      <a href="https://blitzwaresolutions.github.io/bws/services.html"><i class="fas fa-shield-alt"></i> Services</a>
+      <a href="https://blitzwaresolutions.github.io/bws/consult.html"><i class="fas fa-briefcase"></i> Consultation</a>
+      <a href="https://blitzwaresolutions.github.io/bws/solutions.html"><i class="fas fa-cogs"></i> Solutions</a>
+      <a href="https://blitzwaresolutions.github.io/bws/about.html"><i class="fas fa-user"></i> About</a>
+      <a href="https://blitzwaresolutions.github.io/bws/privacy.html"><i class="fas fa-user-shield"></i> Privacy</a>
+      <a href="/bws/terms.html"><i https://blitzwaresolutions.github.io/bws/terms.html"><i class="fas fa-file-contract"></i> Terms</a>
       <a href="mailto:blitzwaresolutions@gmail.com"><i class="fas fa-envelope"></i> Email Us</a>
     </nav>
   </header>
@@ -50,19 +51,19 @@
 
     <!-- Feature cards (links) -->
     <section class="features y-layout">
-      <a class="feature-box card-1" href="services.html" aria-label="Advanced Security Services">
+      <a class="feature-box card-1" href="/bws/services.html" aria-label="Advanced Security Services">
         <div class="icon"><i class="fas fa-shield-alt"></i></div>
         <h3>Advanced Security</h3>
         <p>State-of-the-art solutions to safeguard your data and harden your systems.</p>
       </a>
 
-      <a class="feature-box card-2" href="consult.html" aria-label="Expert Consultation">
+      <a class="feature-box card-2" href="/bws/consult.html" aria-label="Expert Consultation">
         <div class="icon"><i class="fas fa-briefcase"></i></div>
         <h3>Expert Consultation</h3>
         <p>Guidance from industry veterans to navigate complex challenges.</p>
       </a>
 
-      <a class="feature-box card-3" href="solutions.html" aria-label="Custom Solutions">
+      <a class="feature-box card-3" href="/bws/solutions.html" aria-label="Custom Solutions">
         <div class="icon"><i class="fas fa-cogs"></i></div>
         <h3>Custom Solutions</h3>
         <p>Strategies engineered to meet your unique mission requirements.</p>
@@ -75,7 +76,7 @@
     <p><a href="mailto:blitzwaresolutions@gmail.com"><i class="fas fa-envelope"></i> Email Us</a></p>
     <p class="tagline"><i>Connecting you to the future.</i></p>
     <p class="copy">&copy; 2025 BlitzWare Solutions. All rights reserved.</p>
-    <p class="legal"><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+    <p class="legal"><a href="/bws/privacy.html">Privacy Policy</a> | <a href="/bws/terms.html">Terms of Service</a></p>
   </footer>
 
   <!-- Tiny JS toggler -->
@@ -106,11 +107,11 @@
     document.addEventListener('keydown', (e)=> { if (e.key === 'Escape') close(); });
   })();
   </script>
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById("menu-panel");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-  }
-</script>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu-panel");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+  </script>
 </body>
 </html>
