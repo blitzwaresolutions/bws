@@ -2,7 +2,7 @@
 BlitzWare Solutions GitHub page.
 
 This is the official repository for the BlitzWare Solutions website.  
-Built with HTML5, CSS3, and GitHub Pages.
+Built with HTML5, CSS3, JavaScript and GitHub Pages.
 
 ## Structure
 - `index.html` – Home page
