@@ -1,92 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=”en”>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solutions - BlitzWare Solutions</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset=”UTF-8”>
+  <meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
+  <title>Solutions – BlitzWare Solutions</title>
+  <link rel=”stylesheet” href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css>
+  <link rel=”stylesheet” href=”css/styles.css”>
 </head>
+
 <body>
-  <!-- HEADER -->
-  <header class="header">
-    <!-- Back Button -->
-    <button class="back-button" onclick="window.history.back()" aria-label="Go Back">
-      <i class="fas fa-arrow-left"></i>
-    </button>
 
-    <!-- Hamburger Menu -->
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+<!-- ===== BACK BUTTON (top-left) ===== 
+<div class=”back-button” onclick=”history.back()”>
+  <I class=”fas fa-arrow-left”></i>
+</div>
 
-    <!-- Animated Logo -->
-    <video autoplay muted loop playsinline class="logo-video" style="max-width: 180px; margin: 20px auto; display: block;">
-      <source src="img/bwslogo01.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+<!-- ===== HAMBURGER MENU ===== 
+<div class=”hamburger” onclick=”toggleMenu()”>
+  <span></span><span></span><span></span>
+</div>
 
-    <!-- Menu Panel -->
-    <nav id="menu-panel" class="menu-panel">
-      <a href="index.html">Home</a>
-      <a href="mission.html">Mission</a>
-      <a href="roadmap.html">Roadmap</a>
-      <a href="updates.html">Dev Updates</a>
-      <a href="support.html">Support</a>
-      <a href="about.html">About</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-    </nav>
-  </header>
+<!-- ===== NAV MENU PANEL ===== 
+<nav id=”menu-panel” class=”menu-panel”>
+  <a href=”index.html”>Home</a>
+  <a href=”mission.html”>Mission</a>
+  <a href=”roadmap.html”>Roadmap</a>
+  <a href=”updates.html”>Dev Updates</a>
+  <a href=”support.html”>Support</a>
+  <a href=”about.html”>About</a>
+  <a href=”privacy.html”>Privacy Policy</a>
+  <a href=”terms.html”>Terms of Service</a>
+</nav>
 
-  <!-- CONTENT -->
-  <div class="content">
-    <h1>Explore Our Tailored Solutions</h1>
-    <p>Comprehensive IT & Cybersecurity Services</p>
+<!-- ===== ANIMATED LOGO ===== 
+<video autoplay muted loop playsinline class=”logo-video”>
+  <source src=”img/bwslogo1.webm” type=”video/webm”>
+  <source src=”img/bwslogo01.mp4” type=”video/mp4”>
+</video>
 
-    <div class="solution-box">
-      <h3>Network Security & Monitoring</h3>
-      <p>24/7 proactive threat detection and network monitoring to keep your business secure.</p>
-    </div>
-    <div class="solution-box">
-      <h3>Incident Response & Recovery</h3>
-      <p>Lightning-fast incident response to mitigate damage and ensure a full recovery.</p>
-    </div>
-    <div class="solution-box">
-      <h3>Custom AI Integration</h3>
-      <p>Leverage the power of AI to enhance your business operations and security protocols.</p>
-    </div>
-    <div class="solution-box">
-      <h3>Penetration Testing</h3>
-      <p>In-depth testing to identify vulnerabilities before malicious actors can exploit them.</p>
-    </div>
+<!-- ===== PAGE HEADER ===== 
+<header class=”standard-header”>
+  <h1>Our Core Solutions</h1>
+  <p class=”subtitle”>Precision. Reliability. Tactical Cyber Defense.</p>
+</header>
+
+<!-- ===== MAIN CONTENT ===== 
+<section class=”content-section”>
+
+  <div class=”card”>
+    <h2><I class=”fas fa-shield-alt”></i> Network Security & Monitoring</h2>
+    <p>24/7 real-time monitoring, threat defense, and anomaly detection for small businesses, enterprise networks, and embedded systems.</p>
   </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>
-      <a href="mailto:blitzwaresolutions@gmail.com">
-        <i class="fas fa-envelope"></i> Email Us
-      </a>
-    </p>
-    <p class="tagline">
-      <i>Providing Professional IT Services Since 2003</i>
-    </p>
-    <p class="copy">&copy; 2025 BlitzWare Solutions. All rights reserved.</p>
-    <p class="legal">
-      <a href="privacy.html">Privacy Policy</a> |
-      <a href="terms.html">Terms of Service</a>
-    </p>
-  </footer>
+  <div class=”card”>
+    <h2><I class=”fas fa-bolt”></i> Incident Response & Recovery</h2>
+    <p>Lightning-fast triage, isolation, neutralization, and after-action recovery plans to keep operations online under pressure.</p>
+  </div>
 
-  <!-- JS -->
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu-panel");
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
-    }
-  </script>
+  <div class=”card”>
+    <h2><I class=”fas fa-brain”></i> Custom AI Integration</h2>
+    <p>Deploy tactical AI for automation, prediction, and secure edge-processing — purpose-built for your mission profile.</p>
+  </div>
+
+  <div class=”card”>
+    <h2><I class=”fas fa-user-secret”></i> Penetration Testing</h2>
+    <p>Full-spectrum red-team testing to expose weaknesses before adversaries find them.</p>
+  </div>
+
+</section>
+
+<!-- ===== FOOTER ===== 
+<footer>
+  <p>&copy; 2025 BlitzWare Solutions. All rights reserved.</p>
+  <p><a href=mailto:blitzwaresolutions@gmail.com><I class=”fas fa-envelope”></i> Email Us</a></p>
+  <p class=”legal”>
+    <a href=”privacy.html”>Privacy</a> |
+    <a href=”terms.html”>Terms</a>
+  </p>
+</footer>
+
+<!-- ===== JS MENU TOGGLE ===== 
+<script>
+  Function toggleMenu() {
+    Const menu = document.getElementById(“menu-panel”);
+    Menu.style.display = menu.style.display === “block” ? “none” : “block”;
+  }
+</script>
+
 </body>
 </html>
