@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions - BlitzWare Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Solutions - BlitzWare Solutions</title>
 
     <style>
         body {
@@ -31,12 +31,23 @@
             cursor: pointer;
             z-index: 9999;
         }
+
         .back-button i {
             color: #fff;
             font-size: 18px;
         }
+
         .back-button:hover {
             background: rgba(40,40,40,0.8);
+        }
+
+        /* LOGO */
+        .logo-video {
+            width: 120px;
+            height: auto;
+            margin: 20px auto 10px auto;
+            display: block;
+            z-index: 900;
         }
 
         .header {
@@ -104,6 +115,12 @@
     <div class="back-button" onclick="history.back()">
         <i class="fas fa-arrow-left"></i>
     </div>
+
+    <!-- ANIMATED LOGO -->
+    <video autoplay muted loop playsinline class="logo-video">
+        <source src="img/bwslogo1.webm" type="video/webm">
+        <source src="img/bwslogo01.mp4" type="video/mp4">
+    </video>
 
     <div class="header">
         <h1>Our Solutions</h1>
