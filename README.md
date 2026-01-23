@@ -1,4 +1,4 @@
-# bws
+# BlitzWare Solutions
 BlitzWare Solutions GitHub page.
 
 This is the official repository for the BlitzWare Solutions github website.  
