@@ -1,104 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services – BlitzWare Solutions</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 
-  <!-- Icons + Styles -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #FFF;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* BACK BUTTON */
+        .back-button {
+            position: fixed;
+            top: 12px;
+            left: 12px;
+            background: rgba(0,0,0,0.7);
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+        .back-button i {
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .back-button:hover {
+            background: rgba(40,40,40,0.8);
+        }
+
+        /* LOGO */
+        .logo-video {
+            width: 120px;
+            height: auto;
+            margin: 20px auto 10px auto;
+            display: block;
+            z-index: 900;
+        }
+
+        .header {
+            padding: 20px;
+            background-color: #111;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        .content {
+            padding: 40px 20px;
+            flex-grow: 1;
+            background-color: #000;
+        }
+
+        .content h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .solution-box {
+            background-color: #111;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .solution-box:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #111;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: #FFF;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #CCC;
+        }
+    </style>
 </head>
+
 <body>
-  <!-- HEADER -->
-<header class="header">
-  <!-- ⚡ BlitzWare Animated Logo -->
-  <video autoplay muted loop playsinline class="logo-video" poster="img/logo.png">
-    <source src="img/bwslogo01.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
 
-  <!-- Hamburger Menu -->
-  <div class="hamburger" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+    <!-- BACK BUTTON -->
+    <div class="back-button" onclick="history.back()">
+        <i class="fas fa-arrow-left"></i>
+    </div>
 
-  <!-- Navigation Panel -->
-  <nav id="menu-panel" class="menu-panel">
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="consult.html">Consultation</a>
-    <a href="solutions.html">Solutions</a>
-    <a href="about.html">About</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Service</a>
-  </nav>
-</header>
-  <!-- MAIN -->
-  <main class="content">
-    <section class="intro">
-      <h2>Our Services</h2>
-      <p>Comprehensive, real-world cybersecurity and IT solutions tailored to your mission.</p>
-    </section>
+    <!-- ANIMATED LOGO -->
+    <video autoplay muted loop playsinline class="logo-video">
+        <source src="img/bwslogo1.webm" type="video/webm">
+        <source src="img/bwslogo01.mp4" type="video/mp4">
+    </video>
 
-    <!-- Use existing .feature-box styling for consistent look -->
-    <section class="features">
-      <div class="feature-box">
-        <div class="icon"><i class="fas fa-shield-alt"></i></div>
-        <h3>Network Security & Monitoring</h3>
-        <p>24/7 proactive visibility, tuned detections, and attack surface reduction.</p>
-      </div>
+     <div class="header">
+        <h1>Our Solutions</h1>
+        <p>Advanced Software Development & Security Solutions</p>
+    </div>
 
-      <div class="feature-box">
-        <div class="icon"><i class="fas fa-bug"></i></div>
-        <h3>Penetration Testing</h3>
-        <p>Red-team style assessments to identify and validate exploitable weaknesses.</p>
-      </div>
+    <div class="content">
+        <h2>Explore Our Tailored Solutions</h2>
 
-      <div class="feature-box">
-        <div class="icon"><i class="fas fa-sync-alt"></i></div>
-        <h3>Incident Response</h3>
-        <p>Containment, forensics, recovery, and lessons learned—without the chaos.</p>
-      </div>
+              <div class="solution-box">
+            <h3><a href="blitzthreat.html">BlitzThreat</a></h3>
+            <p>Threat mapping and monitoring (<em>planned integration with BlitzGate dashboard</em>).</p>
+        </div>
 
-      <div class="feature-box">
-        <div class="icon"><i class="fas fa-server"></i></div>
-        <h3>Infrastructure Hardening</h3>
-        <p>CIS baselines, secure configs, privileged access controls, and patch strategy.</p>
-      </div>
+        <div class="solution-box">
+            <h3><a href="support.html">BlitzWeather</a></h3>
+            <p>Predictive weather alerts and hazard tracking.</p>
+        </div>
 
-      <div class="feature-box">
-        <div class="icon"><i class="fas fa-user-shield"></i></div>
-        <h3>Compliance & Governance</h3>
-        <p>Policy frameworks and controls aligned to NIST, ISO, PCI, HIPAA, and more.</p>
-      </div>
+        <div class="solution-box">
+            <h3><a href="blitzgate.html">BlitzGate</a></h3>
+            <p>Data management and intelligence platform with Distillery dashboard.</p>
+        </div>
 
-      <div class="feature-box">
-        <div class="icon"><i class="fas fa-robot"></i></div>
-        <h3>Custom AI Integration</h3>
-        <p>Automations and ML-driven insight to accelerate security and IT operations.</p>
-      </div>
-    </section>
-  </main>
+        <div class="solution-box">
+            <h3>Custom Software Solutions</h3>
+            <p>Tailored applications, AI integration, automation, and secure workflows.</p>
+        </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p><a href="mailto:blitzwaresolutions@gmail.com"><i class="fas fa-envelope"></i> Email Us</a></p>
-    <p class="tagline"><i>Connecting you to the future since 2003</i></p>
-    <p class="copy">&copy; 2026 BlitzWare Solutions. All rights reserved.</p>
-    <p class="legal"><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
-  </footer>
+        <div class="solution-box">
+            <h3>Edge & Distributed Systems</h3>
+            <p>Resilient, low-latency systems with local decision logic and fault tolerance.</p>
+        </div>
 
-  <!-- Tiny per-page toggler -->
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu-panel");
-      const isOpen = menu.style.display === "block";
-      menu.style.display = isOpen ? "none" : "block";
-      menu.setAttribute("aria-hidden", isOpen ? "true" : "false");
-    }
-  </script>
+        <div class="solution-box">
+            <h3>Research & Innovation</h3>
+            <p>Forward-looking development of security-first, intelligence-driven software.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 BlitzWare Solutions. All rights reserved.</p>
+        <p><a href="mailto:blitzwaresolutions@gmail.com"><i class="fas fa-envelope"></i> Email Us</a></p>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+    </footer>
+
 </body>
 </html>
