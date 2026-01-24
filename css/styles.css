@@ -125,7 +125,23 @@ a:hover { color: #cfe3ff; text-decoration: underline; }
 /* ===== Features (cards) ===== */
 .features {
   display: grid;
-  grid-template-columns: 1fr;      /* mobile default */
+  grid-template-columns: 1fr;   /* mobile default */
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8px;
+
+  /* Firefox sanity fixes */
+  width: 100%;
+  justify-content: center;
+}
+
+.feature-box {
+  min-width: 0;
+}
+
+
+/* mobile default */
   gap: 20px;
   max-width: 1100px;
   margin: 0 auto;
