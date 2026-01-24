@@ -125,27 +125,14 @@ a:hover { color: #cfe3ff; text-decoration: underline; }
 /* ===== Features (cards) ===== */
 .features {
   display: grid;
-  grid-template-columns: 1fr;   /* mobile default */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* responsive columns */
   gap: 20px;
   max-width: 1100px;
   margin: 0 auto;
   padding: 8px;
-
-  /* Firefox sanity fixes */
-  width: 100%;
-  justify-content: center;
-}
-
-.feature-box {
-  min-width: 0;
-}
-
-
-/* mobile default */
-  gap: 20px;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 8px;
+  justify-items: center;       /* center boxes horizontally */
+  align-items: start;          /* fixes overlap above headline */
+  background: transparent;     /* keep the background clean */
 }
 
 .feature-box {
@@ -156,30 +143,18 @@ a:hover { color: #cfe3ff; text-decoration: underline; }
   padding: 20px 16px;
   color: inherit;
   text-decoration: none;
-  transition:
-    transform .18s ease,
-    box-shadow .18s ease,
-    border-color .18s ease,
-    background-color .18s ease;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
+  width: 100%;
+  max-width: 280px;            /* caps box size for large screens */
 }
 
 .feature-box:hover {
   transform: translateY(-6px) scale(1.02);
-  background: #161616;
+  background: #161616;         /* subtle shade on hover */
   border-color: #22324a;
-  box-shadow: 0 12px 30px rgba(0,0,0,.55);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.55);
 }
 
-.feature-box h3 {
-  margin: 10px 0 10px;
-  font-size: 1.25rem;
-  color: #fff;
-}
-
-.feature-box p {
-  margin: 0;
-  color: #eaeaea;
-}
 
 /* Card icons (Font Awesome – original behavior) */
 .feature-box .icon {
