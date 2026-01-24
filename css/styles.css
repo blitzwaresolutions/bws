@@ -122,17 +122,16 @@ a:hover { color: #cfe3ff; text-decoration: underline; }
 .intro h6 { margin: 0; color: #a8c6ff; letter-spacing: .4px; }
 
 
+
 /* ===== Features (cards) ===== */
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* responsive columns */
-  gap: 20px;
+  grid-template-columns: 1fr;   /* mobile default: single column */
+  gap: 16px;
   max-width: 1100px;
   margin: 0 auto;
   padding: 8px;
-  justify-items: center;       /* center boxes horizontally */
-  align-items: start;          /* fixes overlap above headline */
-  background: transparent;     /* keep the background clean */
+  justify-items: center;
 }
 
 .feature-box {
@@ -145,34 +144,25 @@ a:hover { color: #cfe3ff; text-decoration: underline; }
   text-decoration: none;
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
   width: 100%;
-  max-width: 280px;            /* caps box size for large screens */
+  max-width: 300px;     /* keep consistent box size */
 }
 
 .feature-box:hover {
   transform: translateY(-6px) scale(1.02);
-  background: #161616;         /* subtle shade on hover */
+  background: #161616;
   border-color: #22324a;
   box-shadow: 0 12px 30px rgba(0,0,0,0.55);
 }
 
-
-/* Card icons (Font Awesome – original behavior) */
-.feature-box .icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  margin: 0 auto 8px;
-  border-radius: 12px;
-  background: #0f0f0f;
-  border: 1px solid #1d2533;
+/* ===== Desktop Grid 3x2 ===== */
+@media (min-width: 900px) {
+  .features {
+    grid-template-columns: repeat(3, 1fr);  /* 3 columns */
+    justify-items: stretch;                 /* boxes same width */
+    gap: 20px;
+  }
 }
 
-.feature-box .icon i {
-  font-size: 20px;
-  color: #e9f1ff;
-}
 
 /* ===== Responsive grid ===== */
 @media (min-width: 768px) {
