@@ -98,18 +98,80 @@ a:hover { color: #cfe3ff; text-decoration: underline; }
 .menu-panel a:hover { background: #111; color: #9ecbff; }
 
 /* ===== Vertical dropdown (never horizontal) ===== */
-.nav-links{
-  display:none;
-  position:absolute; right:10px; top:56px;
-  background:#0b0b0b; border:1px solid #111; border-radius:12px;
-  padding:10px 12px; width:230px; max-height:70vh; overflow:auto;
-  box-shadow:0 12px 28px rgba(0,0,0,.6); text-align:left; z-index:1000;
+./* NAV LINKS - default hidden */
+.nav-links {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 56px;
+  background: #0b0b0b;
+  border: 1px solid #111;
+  border-radius: 12px;
+  padding: 10px 12px;
+  width: 230px;
+  max-height: 70vh;
+  overflow-y: auto;
+  flex-direction: column;
+  box-shadow: 0 12px 28px rgba(0,0,0,.6);
+  z-index: 1000;
 }
-.nav-links.open{ display:flex; flex-direction:column; }
-.nav-links a{
-  display:block; padding:10px 8px; border-radius:8px; color:#dfe9ff;
+
+/* Open state */
+.nav-links.open {
+  display: flex;
 }
-.nav-links a:hover{ background:#141a22; color:#9ecbff; }
+
+/* Hamburger style */
+.hamburger {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 42px;
+  height: 36px;
+  background: #0b0b0b;
+  border: 1px solid #222;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 6px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 4px;
+  background: #555;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.is-open span:nth-child(2) { opacity: 0; }
+.hamburger.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+<!--- NAV LINKS --->
+
+/* Nav links hover */
+.nav-links a {
+  display: block;
+  padding: 10px 8px;
+  border-radius: 8px;
+  color: #dfe9ff;
+  text-decoration: none;
+}
+.nav-links a:hover {
+  background: #141a22;
+  color: #9ecbff;
+}
 
 /* ===== Intro ===== */
 .content { padding: 26px 16px; }
