@@ -5,7 +5,7 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: #fff;
-  background: #000;                 /* swap to an image later if desired */
+  background: #000;
   text-align: center;
 }
 
@@ -71,9 +71,9 @@ a:hover { color: #cfe3ff; text-decoration: underline; }
 .hamburger span {
   display: block;
   width: 26px;
-  height: 4px;         /* thick lines */
+  height: 4px;
   margin: 4px 0;
-  background: #555;    /* dark grey */
+  background: #555;
   border-radius: 2px;
 }
 
@@ -95,14 +95,11 @@ a:hover { color: #cfe3ff; text-decoration: underline; }
   color: #dfe9ff;
   text-align: left;
 }
-.menu-panel a:hover {
-  background: #111;
-  color: #9ecbff;
-}
+.menu-panel a:hover { background: #111; color: #9ecbff; }
 
 /* ===== Vertical dropdown (never horizontal) ===== */
 .nav-links{
-  display:none;                                /* hidden by default */
+  display:none;
   position:absolute; right:10px; top:56px;
   background:#0b0b0b; border:1px solid #111; border-radius:12px;
   padding:10px 12px; width:230px; max-height:70vh; overflow:auto;
@@ -120,26 +117,14 @@ a:hover { color: #cfe3ff; text-decoration: underline; }
 .intro h6 { margin: 0; color: #a8c6ff; letter-spacing: .4px; }
 
 /* ===== Features (cards) ===== */
-.features {
-  /* Animated MP4 icon for feature boxes */
-  .icon-video {
-    width: 60px;
-    height: 60px;
-    display: block;
-    margin: 0 auto 10px;
-    object-fit: contain;
-    pointer-events: none;
-    border-radius: 8px; /* optional, matches your box style */
-  }
-
+.features{
   display: grid;
-  grid-template-columns: 1fr; /* Mobile default */
+  grid-template-columns: 1fr; /* mobile default */
   gap: 16px;
-  max-width: 1100px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 8px;
 }
-
 .feature-box {
   display:block;
   background:#111;
@@ -152,7 +137,9 @@ a:hover { color: #cfe3ff; text-decoration: underline; }
 }
 .feature-box:hover {
   transform: translateY(-6px) scale(1.02);
-  background:#161616; border-color:#22324a; box-shadow:0 12px 30px rgba(0,0,0,.55);
+  background:#161616;
+  border-color:#22324a;
+  box-shadow:0 12px 30px rgba(0,0,0,.55);
 }
 .feature-box h3 { margin: 10px 0 10px; font-size: 1.25rem; color:#fff; }
 .feature-box p  { margin: 0; color:#eaeaea; }
@@ -165,25 +152,23 @@ a:hover { color: #cfe3ff; text-decoration: underline; }
 }
 .feature-box .icon i { font-size: 20px; color:#e9f1ff; }
 
-/* Desktop Y-layout (2 top, 1 centered) */
-@media (min-width: 900px){
-  .features.y-layout{
-    grid-template-columns: repeat(12, 1fr);
-    gap: 24px;
-  }
-  .y-layout .card-1{ grid-column: 2 / span 4; }  /* left top  */
-  .y-layout .card-2{ grid-column: 7 / span 4; }  /* right top */
-  .y-layout .card-3{ grid-column: 5 / span 4; }  /* centered bottom */
+/* ===== Mobile/Desktop (tablet) centered boxes 600–899px ===== */
+@media (min-width: 600px) and (max-width: 899px) {
+    .feature-box {
+        width: 90%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
 }
 
-/* ===== Solutions page 6-card grid fix ===== */
-.solutions .features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
-  max-width: 95%;
-  margin: 0 auto;
-  justify-content: center;
+/* Desktop Y-layout (3x2 grid) */
+@media (min-width: 900px){
+  .features.y-layout{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
 }
 
 /* ====== HERO ====== */
@@ -192,7 +177,7 @@ a:hover { color: #cfe3ff; text-decoration: underline; }
   padding: clamp(48px, 8vw, 96px) 16px 32px;
   text-align: center;
   overflow: hidden;
-  background: transparent; /* keep your global black/bg image visible */
+  background: transparent;
 }
 
 /* soft under-glow behind the shield/logo */
@@ -217,17 +202,8 @@ a:hover { color: #cfe3ff; text-decoration: underline; }
 }
 
 /* titles */
-.hero-title {
-  margin: 6px 0 4px;
-  font-size: clamp(1.9rem, 2.2vw + 1rem, 3rem);
-  color: #fff;
-  letter-spacing: .5px;
-}
-.hero-sub {
-  margin: 0;
-  color: #cfe0ff;
-  font-style: italic;
-}
+.hero-title { margin: 6px 0 4px; font-size: clamp(1.9rem, 2.2vw + 1rem, 3rem); color: #fff; letter-spacing: .5px; }
+.hero-sub { margin: 0; color: #cfe0ff; font-style: italic; }
 
 /* bolt */
 .bolt {
@@ -245,25 +221,23 @@ a:hover { color: #cfe3ff; text-decoration: underline; }
   stroke-width: 1.5;
   paint-order: stroke fill;
   filter: drop-shadow(0 0 6px rgba(130,170,255,.85));
-  /* animated electric effect */
-  animation:
-    boltFlicker 1.35s infinite steps(2, end),
-    boltZap 2.8s cubic-bezier(.25,.1,.25,1) infinite;
+  animation: boltFlicker 1.35s infinite steps(2, end),
+             boltZap 2.8s cubic-bezier(.25,.1,.25,1) infinite;
 }
 
 /* ===== Animated/Video Logo =====*/
 .logo-video {
-  width: 250px;      /* Adjust to match your layout */
+  width: 250px;
   height: auto;
   display: block;
-  margin: 0 auto;    /* Center horizontally */
-  pointer-events: none; /* So it doesn’t interfere with clicks */
+  margin: 0 auto;
+  pointer-events: none;
 }
 
 /* ====== FOOTER WATERMARK ====== */
 footer {
   position: relative;
-  isolation: isolate; /* keep watermark behind text */
+  isolation: isolate;
 }
 footer::before {
   content: "";
@@ -273,30 +247,16 @@ footer::before {
   width: min(280px, 45vw);
   height: min(280px, 45vw);
   background: url('img/bwslogo1.mp4') center/contain no-repeat;
-  opacity: .08;            /* faint watermark */
+  opacity: .08;
   filter: grayscale(10%) contrast(120%);
   z-index: -1;
 }
 
 /* ====== KEYFRAMES ====== */
-@keyframes glowPulse {
-  0%,100% { opacity: .65; transform: scale(1); }
-  50%     { opacity: .9;  transform: scale(1.04); }
-}
-@keyframes shieldFloat {
-  0%,100% { transform: translateY(0); }
-  50%     { transform: translateY(-6px); }
-}
-@keyframes boltFlicker {
-  0%, 19%, 21%, 59%, 61%, 100% { opacity: 1; }
-  20%, 60% { opacity: .35; }
-}
-@keyframes boltZap {
-  0%   { transform: translateY(0) rotate(-2deg) scale(1); }
-  40%  { transform: translateY(4px) rotate(2deg)  scale(1.03); }
-  70%  { transform: translateY(-3px) rotate(-3deg) scale(1.05); }
-  100% { transform: translateY(0) rotate(-2deg)   scale(1); }
-}
+@keyframes glowPulse { 0%,100% { opacity: .65; transform: scale(1); } 50% { opacity: .9;  transform: scale(1.04); } }
+@keyframes shieldFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes boltFlicker { 0%, 19%, 21%, 59%, 61%, 100% { opacity: 1; } 20%, 60% { opacity: .35; } }
+@keyframes boltZap { 0% { transform: translateY(0) rotate(-2deg) scale(1); } 40% { transform: translateY(4px) rotate(2deg)  scale(1.03); } 70% { transform: translateY(-3px) rotate(-3deg) scale(1.05); } 100% { transform: translateY(0) rotate(-2deg) scale(1); } }
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
