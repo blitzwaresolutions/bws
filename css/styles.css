@@ -264,6 +264,21 @@ footer::before {
 }
 
 
+/* Default: interior pages */
+.inner .features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Index-only freedom */
+.home .features {
+  /* do whatever you want */
+}
+
+
 /* ===== Footer ===== */
 footer{
   background:#000; color:#fff; border-top:1px solid #111;
