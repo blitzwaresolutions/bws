@@ -43,13 +43,37 @@
   </div>
 
   <!-- Navigation Panel -->
-  <nav id="menu-panel" class="menu-panel">
-    <a href="index.html">Home</a>
-    <a href="solutions.html">Solutions</a>
-    <a href="about.html">About</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Service</a>
-  </nav>
+<nav class="nav-links">
+    <a href="https://blitzwaresolutions.github.io/bws/index.html">
+        <i class="fas fa-home"></i> Home
+    </a>
+    <a href="https://blitzwaresolutions.github.io/bws/blitzweather.html">
+        <i class="fas fa-cloud-sun"></i> BlitzWeather
+    </a>
+    <a href="https://blitzwaresolutions.github.io/supportbws">
+        <i class="fas fa-coffee"></i> Support BWS
+    </a>
+    <a href="https://blitzwaresolutions.github.io/bws/privacy.html">
+        <i class="fas fa-user-secret"></i> Privacy
+    </a>
+    <a href="https://blitzwaresolutions.github.io/bws/terms.html">
+        <i class="fas fa-file-contract"></i> Terms
+    </a>
+    <a href="mailto:blitzwaresolutions@gmail.com">
+        <i class="fas fa-envelope"></i> Email
+    </a>
+</nav>
+
+<script>
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('is-open');
+});
+</script>
+
 </header>
 
   <h1 class="hero-title">BlitzWare Solutions</h1>
