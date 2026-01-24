@@ -98,9 +98,12 @@
     </button>
 
         <!-- ✅ Updated Nav for /bws/ root -->
-    <nav class="nav-links">
+      <nav class="nav-links">
     <a href="https://blitzwaresolutions.github.io/bws/index.html">
         <i class="fas fa-home"></i> Home
+    </a>
+    <a href="https://blitzwaresolutions.github.io/bws/blitzweather.html">
+        <i class="fas fa-bolt"></i> BlitzWeather
     </a>
     <a href="https://blitzwaresolutions.github.io/supportbws">
         <i class="fas fa-coffee"></i> Support BWS
@@ -118,6 +121,16 @@
         <i class="fas fa-envelope"></i> Email
     </a>
 </nav>
+
+<script>
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('is-open');
+});
+</script>
 
 <script>
 const hamburger = document.querySelector('.hamburger');
