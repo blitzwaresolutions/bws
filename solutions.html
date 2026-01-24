@@ -17,14 +17,38 @@
 </div>
 
 <nav class="nav-links">
-    <a href="https://blitzwaresolutions.github.io/bws/index.html">Home</a>
-    <a href="https://blitzwaresolutions.github.io/bws/blitzweather.html">BlitzWeather</a>
-    <a href="https://blitzwaresolutions.github.io/supportbws">Support BWS</a>
-    <a href="https://blitzwaresolutions.github.io/bws/about.html">About</a>
-    <a href="https://blitzwaresolutions.github.io/bws/privacy.html">Privacy</a>
-    <a href="https://blitzwaresolutions.github.io/bws/terms.html">Terms</a>
-    <a href="mailto:blitzwaresolutions@gmail.com">Email</a>
+    <a href="https://blitzwaresolutions.github.io/bws/index.html">
+        <i class="fas fa-home"></i> Home
+    </a>
+    <a href="https://blitzwaresolutions.github.io/bws/blitzweather.html">
+        <i class="fas fa-bolt"></i> BlitzWeather
+    </a>
+    <a href="https://blitzwaresolutions.github.io/supportbws">
+        <i class="fas fa-coffee"></i> Support BWS
+    </a>
+    <a href="https://blitzwaresolutions.github.io/bws/about.html">
+        <i class="fas fa-info-circle"></i> About
+    </a>
+    <a href="https://blitzwaresolutions.github.io/bws/privacy.html">
+        <i class="fas fa-user-secret"></i> Privacy
+    </a>
+    <a href="https://blitzwaresolutions.github.io/bws/terms.html">
+        <i class="fas fa-file-contract"></i> Terms
+    </a>
+    <a href="mailto:blitzwaresolutions@gmail.com">
+        <i class="fas fa-envelope"></i> Email
+    </a>
 </nav>
+
+<script>
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('is-open');
+});
+</script>
 
 <!-- BACK BUTTON -->
 <a class="back-button" href="https://blitzwaresolutions.github.io/bws/index.html">
