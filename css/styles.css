@@ -125,6 +125,14 @@ a:hover { color: #cfe3ff; text-decoration: underline; }
   margin: 0 auto;
   padding: 8px;
 }
+
+
+/* Exclude index from shared grid logic */
+body:not(.index) .features {
+  display: grid;
+}
+
+
 .feature-box {
   display:block;
   background:#111;
