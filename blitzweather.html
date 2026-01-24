@@ -1,222 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BlitzWeather⚡️</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BlitzWeather⚡️</title>
 
-  <!-- Global Styles -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="css/styles.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!-- Main Styles -->
+<link rel="stylesheet" href="css/styles.css">
 
-  <!-- BlitzWeather Page Styles -->
-  <style>
-    /* Fullscreen background video */
-    #blitzweather {
-      position: relative;
-      min-height: 100vh;
-      color: #fff;
-      overflow-x: hidden;
-      isolation: isolate;
-    }
+<style>
+/* ===== Background Video ===== */
+#blitzweather {
+  position: relative;
+  min-height: 100vh;
+  color: #fff;
+  overflow-x: hidden;
+  isolation: isolate;
+}
+#blitzweather video.bg-video {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  z-index:-2;
+}
+#blitzweather::after {
+  content:"";
+  position: fixed;
+  inset:0;
+  background: rgba(0,0,0,0.45);
+  z-index:-1;
+}
 
-    #blitzweather video.bg-video {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      z-index: -2;
-    }
+/* ===== HEADER / HAMBURGER ===== */
+.header {
+  position: relative;
+  padding: 16px;
+  z-index: 1000;
+}
+.hamburger {
+  position: absolute;
+  top:16px;
+  right:16px;
+  width:42px; height:36px;
+  background:#0b0b0b;
+  border:1px solid #222;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  cursor:pointer;
+  z-index: 1001;
+}
+.hamburger span {
+  width:26px;
+  height:4px;
+  background:#fff;
+  border-radius:2px;
+  display:block;
+  transition:.2s;
+}
+.hamburger.is-open span:nth-child(1){ transform: translateY(7px) rotate(45deg);}
+.hamburger.is-open span:nth-child(2){ opacity:0;}
+.hamburger.is-open span:nth-child(3){ transform: translateY(-7px) rotate(-45deg);}
 
-    #blitzweather::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.45);
-      z-index: -1;
-    }
+/* ===== NAV LINKS ===== */
+#nav-links {
+  display:none;
+  position:absolute;
+  top:56px;
+  right:16px;
+  background: rgba(0,0,0,0.95);
+  border-radius:8px;
+  padding:10px;
+  flex-direction: column;
+  z-index:1000;
+}
+#nav-links.open {
+  display:flex;
+}
+#nav-links a {
+  display:block;
+  padding:10px 12px;
+  color:#dfe9ff;
+  text-decoration:none;
+  border-radius:6px;
+}
+#nav-links a:hover { background:#111; color:#9ecbff; }
 
-    /* Content boxes */
-    .bw-wrap {
-      width: 100%;
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 96px 16px 120px;
-    }
-    .bw-card {
-      background: rgba(10, 12, 20, 0.72);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 18px 16px;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-      margin: 14px 0;
-    }
-    .bw-card h2 {
-      margin: 0 0 8px 0;
-      font-size: 1.15rem;
-    }
-    .bw-card p,
-    .bw-card li {
-      line-height: 1.5;
-      font-size: 0.98rem;
-    }
-    .bw-hero-title {
-      margin: 6px 0 10px 0;
-      font-size: 1.2rem;
-      font-weight: 800;
-      text-align: center;
-    }
-    .bw-subtitle {
-      margin: 0 0 12px 0;
-      font-size: 0.95rem;
-      opacity: 0.9;
-      text-align: center;
-    }
+/* ===== Content Wrapper ===== */
+.bw-wrap {
+  width:100%;
+  max-width:960px;
+  margin:0 auto;
+  padding:96px 16px 120px;
+}
+.bw-card {
+  background: rgba(10,12,20,0.72);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:16px;
+  padding:18px 16px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  margin: 14px 0;
+}
+.bw-card h2 { margin:0 0 8px; font-size:1.15rem; }
+.bw-card p, .bw-card li { line-height:1.5; font-size:0.98rem; }
+.bw-hero-title { margin:6px 0 10px; font-size:1.2rem; font-weight:800; text-align:center;}
+.bw-subtitle { margin:0 0 12px; font-size:0.95rem; opacity:0.9; text-align:center; }
 
-    footer {
-      text-align: center;
-    }
-  </style>
+/* ===== Footer ===== */
+footer { text-align:center; padding:20px 10px 26px; background:#000; color:#fff; border-top:1px solid #111;}
+footer a { color:#9ecbff; text-decoration:none; }
+footer a:hover { color:#66a3ff; }
+
+</style>
 </head>
-
 <body id="blitzweather">
 
-  <!-- ===== BACKGROUND VIDEO ===== -->
-  <video class="bg-video" autoplay muted loop playsinline poster="img/logo.png">
-    <source src="img/bwssupp01.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+<!-- Background Video -->
+<video class="bg-video" autoplay muted loop playsinline poster="img/logo.png">
+  <source src="img/bwssupp01.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
-  <!-- ===== HEADER (Menu Only) ===== -->
-  <header class="header">
-    <!-- Hamburger -->
-    <button id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+<!-- Header / Hamburger -->
+<header class="header">
+  <button id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 
-        <!-- ✅ Updated Nav for /bws/ root -->
-      <nav class="nav-links">
-    <a href="https://blitzwaresolutions.github.io/bws/index.html">
-        <i class="fas fa-home"></i> Home
-    </a>
-    <a href="https://blitzwaresolutions.github.io/bws/blitzweather.html">
-        <i class="fas fa-bolt"></i> BlitzWeather
-    </a>
-<a href="https://blitzwaresolutions.github.io/bws/solutions.html">
-        <i class="fas fa-gears"></i> Solutions 
-    </a>
-    <a href="https://blitzwaresolutions.github.io/supportbws">
-        <i class="fas fa-coffee"></i> Support BWS
-    </a>
-    <a href="https://blitzwaresolutions.github.io/bws/about.html">
-        <i class="fas fa-info-circle"></i> About
-    </a>
-    <a href="https://blitzwaresolutions.github.io/bws/privacy.html">
-        <i class="fas fa-user-secret"></i> Privacy
-    </a>
-    <a href="https://blitzwaresolutions.github.io/bws/terms.html">
-        <i class="fas fa-file-contract"></i> Terms
-    </a>
-    <a href="mailto:blitzwaresolutions@gmail.com">
-        <i class="fas fa-envelope"></i> Email
-    </a>
-</nav>
+  <nav id="nav-links">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="blitzweather.html"><i class="fas fa-bolt"></i> BlitzWeather</a>
+    <a href="solutions.html"><i class="fas fa-gears"></i> Solutions</a>
+    <a href="supportbws"><i class="fas fa-coffee"></i> Support BWS</a>
+    <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    <a href="privacy.html"><i class="fas fa-user-secret"></i> Privacy</a>
+    <a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a>
+    <a href="mailto:blitzwaresolutions@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+  </nav>
+</header>
 
-<script>
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    hamburger.classList.toggle('is-open');
-});
-</script>
-
-<script>
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    hamburger.classList.toggle('is-open');
-});
-</script>
-  </header>
-
-  <!-- ===== MAIN CONTENT ===== -->
-  <main class="content">
-    <div class="bw-wrap">
-      <div class="bw-card">
-        <div class="bw-hero-title">&copy; BlitzWeather by BlitzWare Solutions</div>
-        <p class="bw-subtitle">
-          Faster warnings. Fewer “no one saw it coming” moments. Born from real disasters, tuned for real people.
-        </p>
-      </div>
-
-      <section class="bw-card">
-        <h2>Story</h2>
-        <p>
-          We build for the 0–15 minute window where every second matters. BlitzWeather is engineered to cut signal-to-alert time and surface the <em>right</em> cue when your brain is juggling a dozen others.
-        </p>
-      </section>
-
-      <section class="bw-card">
-        <h2>Details</h2>
-        <ul>
-          <li>Live radar + NWS alert overlays for fast visual reads.</li>
-          <li>Edge AI nowcast (0–15 min) in active development.</li>
-          <li>No ads. No tracking. Mission > metrics.</li>
-        </ul>
-      </section>
-
-      <section class="bw-card">
-        <h2>Download</h2>
-        <p>Run the MVP now or grab the latest build when it drops.<br>Coming Soon...</p>
-      </section>
+<!-- Main Content -->
+<main class="content">
+  <div class="bw-wrap">
+    <div class="bw-card">
+      <div class="bw-hero-title">&copy; BlitzWeather by BlitzWare Solutions</div>
+      <p class="bw-subtitle">Faster warnings. Fewer “no one saw it coming” moments. Born from real disasters, tuned for real people.</p>
     </div>
-  </main>
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <p><a href="mailto:blitzwaresolutions@gmail.com"><i class="fas fa-envelope"></i> Email Us</a></p>
-    <p class="tagline"><i>BlitzWeather by BlitzWare Solutions</i></p>
-    <p class="tagline"><i>Connecting you to the future since 2003.</i></p>
-    <p class="copy">&copy; 2026 BlitzWare Solutions. All rights reserved.</p>
-    <p class="legal"><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
-  </footer>
+    <section class="bw-card">
+      <h2>Story</h2>
+      <p>We build for the 0–15 minute window where every second matters. BlitzWeather is engineered to cut signal-to-alert time and surface the <em>right</em> cue when your brain is juggling a dozen others.</p>
+    </section>
 
-  <!-- ===== JS Menu Toggle ===== -->
-  <script>
-  (function(){
-    const btn = document.getElementById('hamburger');
-    const nav = document.getElementById('nav-links');
-    if(!btn || !nav) return;
+    <section class="bw-card">
+      <h2>Details</h2>
+      <ul>
+        <li>Live radar + NWS alert overlays for fast visual reads.</li>
+        <li>Edge AI nowcast (0–15 min) in active development.</li>
+        <li>No ads. No tracking. Mission > metrics.</li>
+      </ul>
+    </section>
 
-    const close = () => {
-      nav.classList.remove('open');
-      btn.classList.remove('is-open');
-      btn.setAttribute('aria-expanded', 'false');
-      nav.setAttribute('aria-hidden', 'true');
-    };
-    const toggle = () => {
-      const o = nav.classList.toggle('open');
-      btn.classList.toggle('is-open', o);
-      btn.setAttribute('aria-expanded', o ? 'true' : 'false');
-      nav.setAttribute('aria-hidden', o ? 'false' : 'true');
-    };
+    <section class="bw-card">
+      <h2>Download</h2>
+      <p>Run the MVP now or grab the latest build when it drops.<br>Coming Soon...</p>
+    </section>
+  </div>
+</main>
 
-    close();
-    btn.addEventListener('click', toggle);
-    document.addEventListener('click', (e)=> {
-      if (!nav.contains(e.target) && !btn.contains(e.target)) close();
-    });
-    document.addEventListener('keydown', (e)=> { if (e.key === 'Escape') close(); });
-  })();
-  </script>
+<!-- Footer -->
+<footer>
+  <p><a href="mailto:blitzwaresolutions@gmail.com"><i class="fas fa-envelope"></i> Email Us</a></p>
+  <p class="tagline"><i>BlitzWeather by BlitzWare Solutions</i></p>
+  <p class="tagline"><i>Connecting you to the future since 2003.</i></p>
+  <p class="copy">&copy; 2026 BlitzWare Solutions. All rights reserved.</p>
+  <p class="legal"><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+</footer>
 
+<!-- Hamburger Menu JS -->
+<script>
+(() => {
+  const btn = document.getElementById('hamburger');
+  const nav = document.getElementById('nav-links');
+  if(!btn || !nav) return;
+
+  const close = () => {
+    nav.classList.remove('open');
+    btn.classList.remove('is-open');
+    btn.setAttribute('aria-expanded', 'false');
+  };
+
+  const toggle = () => {
+    nav.classList.toggle('open');
+    btn.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', btn.classList.contains('is-open'));
+  };
+
+  btn.addEventListener('click', toggle);
+
+  document.addEventListener('click', e => {
+    if (!nav.contains(e.target) && !btn.contains(e.target)) close();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') close();
+  });
+
+})();
+</script>
 
 </body>
 </html>
