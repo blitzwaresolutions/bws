@@ -126,6 +126,14 @@ a:hover { color: #cfe3ff; text-decoration: underline; }
   padding: 8px;
 }
 
+/* ===== Index-only feature layout ===== */
+body.index .features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 1100px;   /* NOT full width */
+  margin: 0 auto;
+}
 
 /* Exclude index from shared grid logic */
 body:not(.index) .features {
