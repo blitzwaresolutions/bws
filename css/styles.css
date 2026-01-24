@@ -325,13 +325,14 @@ footer::before {
 
 
 /* ===== Mobile Desktop / small desktop fix ===== */
-@media (min-width: 600px) and (max-width: 900px) {
   .features {
-    grid-template-columns: repeat(3, 1fr); /* force 3 columns */
-    justify-content: center;                /* center the grid */
-    gap: 16px;
-    max-width: 95%;                         /* reclaim extra width */
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* force 3 columns */
+  justify-content: center;                /* center the grid */
+  gap: 16px;
+  max-width: 95%;                         /* reclaim extra width */
+  margin: 0 auto;
+  align-items: stretch;
 }
 
 /* ===== Footer ===== */
