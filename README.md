@@ -6,6 +6,7 @@ Built with HTML5, CSS3, JavaScript, GitHub Pages and lots of coffee.
 
 ## Structure
 - `index.html` – Home page
+- `security.html` – Advanced Security 
 - `solutions.html` – Solutions
 - `blitzweather.html` - BlitzWeather
 - `support.html` - supportbws 
