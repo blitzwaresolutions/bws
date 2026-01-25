@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advanced Security – BlitzWare Solutions</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security – BlitzWare Solutions</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
 <!-- Back Button -->
-<a class="back-button" href="index.html">
-  <i class="fas fa-arrow-left"></i> Back
-</a>
+<button class="back-button" onclick="history.back()">&#8592; Back</button>
 
 <!-- HEADER -->
 <header class="header">
+  <!-- ⚡ BlitzWare Logo -->
   <video autoplay muted loop playsinline class="logo-video" poster="img/logo.png">
     <source src="img/bwslogo01.mp4" type="video/mp4">
     Your browser does not support the video tag.
@@ -23,98 +22,106 @@
 
   <!-- Hamburger Menu -->
   <div id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span>
   </div>
 
-  <!-- Navigation -->
+  <!-- Navigation Panel -->
   <nav id="nav-links" class="nav-links" aria-hidden="true">
     <a href="index.html"><i class="fas fa-home"></i> Home</a>
-    <a href="blitzweather.html"><i class="fas fa-bolt"></i> BlitzWeather</a>
-    <a href="supportbws"><i class="fas fa-mug-shot"></i> Support BWS</a>
     <a href="solutions.html"><i class="fas fa-cogs"></i> Solutions</a>
     <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
-    <a href="privacy.html"><i class="fas fa-user-shield"></i> Privacy</a>
+    <a href="privacy.html"><i class="fas fa-user-secret"></i> Privacy</a>
     <a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a>
     <a href="mailto:blitzwaresolutions@gmail.com"><i class="fas fa-envelope"></i> Email</a>
   </nav>
 </header>
 
-<!-- MAIN CONTENT -->
+<!-- MAIN -->
 <main>
-  <h1 class="hero-title">Advanced Security Software</h1>
-  <p class="hero-sub">Protect your systems with software engineered for resilience and reliability.</p>
+  <h1 class="hero-title">Security at BlitzWare Solutions</h1>
+  <p class="hero-sub">Built-in, edge-first, fail-safe protection across all our products.</p>
 
   <section class="intro">
-    <h2>What We Offer</h2>
-    <p>
-      Our Advanced Security solutions focus on building software that is secure by design. Every line of code is written with modern threat mitigation in mind, ensuring that your applications remain robust against evolving cyber threats.
-    </p>
-    <p>
-      We specialize in software hardening, secure API development, and integrated monitoring features that give you visibility and control over your systems without adding operational overhead.
-    </p>
-    <p>
-      With a security-first mindset, our solutions help prevent unauthorized access, data leaks, and vulnerabilities before they become a problem, all while maintaining top-tier performance and usability.
-    </p>
+    <h2>Our Security Philosophy</h2>
+    <p>Every product we develop integrates security at the design level. From isolation and fail-safe logic to encryption and observability, our systems are engineered to protect, monitor, and respond.</p>
   </section>
 
   <section class="features y-layout">
-    <a class="feature-box" href="solutions.html" aria-label="Secure API Development">
-      <div class="icon"><i class="fas fa-network-wired"></i></div>
-      <h3>Secure API Development</h3>
-      <p>Robust, encrypted, and resilient APIs designed for modern applications.</p>
-    </a>
-
-    <a class="feature-box" href="solutions.html" aria-label="Software Hardening">
+    <!-- BlitzGate -->
+    <a class="feature-box card-1" href="solutions.html" aria-label="BlitzGate Security">
       <div class="icon"><i class="fas fa-shield-alt"></i></div>
-      <h3>Software Hardening</h3>
-      <p>Strengthened software architectures that minimize attack surfaces.</p>
+      <h3>BlitzGate</h3>
+      <p>Inline pipeline protection with deterministic policy enforcement and modular AI advisory layers.</p>
     </a>
 
-    <a class="feature-box" href="solutions.html" aria-label="Monitoring & Threat Detection">
-      <div class="icon"><i class="fas fa-eye"></i></div>
-      <h3>Monitoring & Detection</h3>
-      <p>Integrated tools to track system integrity and detect anomalies early.</p>
+    <!-- BlitzWeather -->
+    <a class="feature-box card-2" href="solutions.html" aria-label="BlitzWeather Security">
+      <div class="icon"><i class="fas fa-bolt"></i></div>
+      <h3>BlitzWeather</h3>
+      <p>Edge-first prediction engine, encrypted local DB, GPS & alert processing, fully sandboxed.</p>
+    </a>
+
+    <!-- BlitzThreat EEM -->
+    <a class="feature-box card-3" href="solutions.html" aria-label="BlitzThreat EEM Security">
+      <div class="icon"><i class="fas fa-network-wired"></i></div>
+      <h3>BlitzThreat EEM</h3>
+      <p>Secure live threat map; server-side API proxy, feed validation, and fail-soft visualization.</p>
+    </a>
+
+    <!-- BlitzRAG (R&D) -->
+    <a class="feature-box card-4" href="solutions.html" aria-label="BlitzRAG Security">
+      <div class="icon"><i class="fas fa-robot"></i></div>
+      <h3>BlitzRAG (R&D)</h3>
+      <p>Local-first vector store & LLM; deterministic retrieval; optional encrypted API endpoints.</p>
     </a>
   </section>
+
+  <section class="intro">
+    <h2>Core Security Principles</h2>
+    <ul>
+      <li><strong>Isolation:</strong> All modules sandboxed to prevent data leakage.</li>
+      <li><strong>Fail-Safe Logic:</strong> Critical enforcement cannot be bypassed; advisory modules fail-open.</li>
+      <li><strong>Data Integrity:</strong> Signed updates, checksums, versioned schemas, and audit logs.</li>
+      <li><strong>Minimal Attack Surface:</strong> Outbound-only connections, optional VPN/DNS pinning.</li>
+      <li><strong>Privacy by Design:</strong> User data processed locally whenever possible.</li>
+    </ul>
+  </section>
+
 </main>
 
 <!-- FOOTER -->
 <footer>
   <p><a href="mailto:blitzwaresolutions@gmail.com"><i class="fas fa-envelope"></i> Email Us</a></p>
-  <p class="tagline"><i>Connecting you to the future since 2003.</i></p>
+  <p class="tagline"><i>Connecting you to the future</i> since 2003.</p>
   <p class="copy">&copy; 2026 BlitzWare Solutions. All rights reserved.</p>
   <p class="legal"><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
 </footer>
 
-<!-- MENU JS -->
+<!-- Hamburger Menu JS -->
 <script>
-(function(){
-  const btn = document.getElementById('hamburger');
-  const nav = document.getElementById('nav-links');
-  if(!btn || !nav) return;
+  (function(){
+    const btn = document.getElementById('hamburger');
+    const nav = document.getElementById('nav-links');
+    if(!btn || !nav) return;
 
-  const closeMenu = () => {
-    nav.classList.remove('open');
-    btn.classList.remove('is-open');
-    btn.setAttribute('aria-expanded', 'false');
-    nav.setAttribute('aria-hidden', 'true');
-  };
+    const close = () => {
+      nav.classList.remove('open');
+      btn.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+      nav.setAttribute('aria-hidden', 'true');
+    };
+    const toggle = () => {
+      const o = nav.classList.toggle('open');
+      btn.classList.toggle('is-open', o);
+      btn.setAttribute('aria-expanded', o ? 'true' : 'false');
+      nav.setAttribute('aria-hidden', o ? 'false' : 'true');
+    };
 
-  const toggleMenu = () => {
-    const isOpen = nav.classList.toggle('open');
-    btn.classList.toggle('is-open', isOpen);
-    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    nav.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-  };
-
-  btn.addEventListener('click', toggleMenu);
-  document.addEventListener('click', (e) => {
-    if (!nav.contains(e.target) && !btn.contains(e.target)) closeMenu();
-  });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-})();
+    close();
+    btn.addEventListener('click', toggle);
+    document.addEventListener('click', (e) => { if(!nav.contains(e.target) && !btn.contains(e.target)) close(); });
+    document.addEventListener('keydown', (e) => { if(e.key==='Escape') close(); });
+  })();
 </script>
 
 </body>
