@@ -10,7 +10,9 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+
+<body class="index">
+
   <!-- HEADER -->
 
     <!-- ⚡ BlitzWare Animated Logo -->
@@ -24,26 +26,47 @@
       <span></span><span></span><span></span>
     </button>
 
-    <!-- ✅ Updated Nav for /bws/ root -->
-    <nav id="nav-links" class="nav-links" aria-hidden="true">
-      <a href="/bws/index.html"><i class="fas fa-home"></i> Home</a>
+    <!-- ✅ Updated Nav ✅️ -->
+    <nav class="nav-links">
+    <a href="https://blitzwaresolutions.github.io/bws/index.html">
+        <i class="fas fa-home"></i> Home
+    </a>
+    <a href="https://blitzwaresolutions.github.io/bws/blitzweather.html">
+        <i class="fas fa-bolt"></i> BlitzWeather
+    </a>
+    <a href="https://blitzwaresolutions.github.io/supportbws">
+        <i class="fas fa-coffee"></i> Support BWS
+    </a>
+    <a href="https://blitzwaresolutions.github.io/bws/solutions.html">
+        <i class="fas fa-gears"></i> Solutions 
+    </a>
+    <a href="https://blitzwaresolutions.github.io/bws/about.html">
+        <i class="fas fa-info-circle"></i> About
+    </a>
+    <a href="https://blitzwaresolutions.github.io/bws/privacy.html">
+        <i class="fas fa-user-secret"></i> Privacy
+    </a>
+    <a href="https://blitzwaresolutions.github.io/bws/terms.html">
+        <i class="fas fa-file-contract"></i> Terms
+    </a>
+    <a href="mailto:blitzwaresolutions@gmail.com">
+        <i class="fas fa-envelope"></i> Email
+    </a>
+</nav>
 
-      <!-- Product & Support -->
-      <a href="/bws/blitzweather.html"><i class="fas fa-bolt"></i> BlitzWeather</a>
+<script>
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
 
-      <a href="/supportbws/"><i class="fas fa-mug-hot"></i> Support</a>
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('is-open');
+});
+</script>
 
-      <a href="/bws/solutions.html"><i class="fas fa-cogs"></i> Solutions</a>
-
-      <a href="/bws/about.html"><i class="fas fa-user"></i> About</a>
-
-      <a href="/bws/privacy.html"><i class="fas fa-user-shield"></i> Privacy</a>
-
-      <a href="/bws/terms.html"><i class="fas fa-file-contract"></i> Terms</a>
-
-      <a href="mailto:blitzwaresolutions@gmail.com"><i class="fas fa-envelope"></i> Email Us</a>
-    </nav>
   </header>
+
+<br>
 
   <!-- MAIN -->
 
