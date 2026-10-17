@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-"""Build data/cve-snapshot.json from NVD, CISA KEV and FIRST EPSS (stdlib only).
-Optional env: NVD_API_KEY (server-side only, never put it in the browser), BTEEM_DAYS (default 14)."""
 import json, os, sys, time, urllib.parse, urllib.request
 from datetime import datetime, timedelta, timezone
 
@@ -11,7 +8,7 @@ NVD = "https://services.nvd.nist.gov/rest/json/cves/2.0"
 KEV = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
 EPSS = "https://api.first.org/data/v1/epss"
 MAX_ITEMS = 300
-PAUSE = 0.8 if KEY else 6.5   # stay under NVD rate limits
+PAUSE = 0.8 if KEY else 6.5
 
 def get(url, headers=None, tries=4):
     for n in range(tries):
