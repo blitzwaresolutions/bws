@@ -169,12 +169,42 @@ function draw() {
 fetch("https://blitzwaresolutions.github.io/bws/data/cve-snapshot.json", {
   cache: "no-cache"
 })
-  if (!s.generated) { $("asof").textContent = "No data yet"; $("msg").hidden = false;
-    $("msg").textContent = "No snapshot yet. Run the 'Update CVE snapshot' workflow, or run scripts/fetch_cve.py locally."; return; }
-  $("asof").textContent = (s.sample ? "Sample snapshot " : "Snapshot ") + s.generated.replace("T", " ").replace("Z", " UTC");
-  drawSummary(); drawCharts(); draw(); $("banner").hidden = !s.sample;
-  ["q", "sev", "sort", "kev"].forEach(id => $(id).addEventListener("input", draw));
-}).catch(() => { $("asof").textContent = "Unavailable"; $("msg").hidden = false; $("msg").textContent = location.protocol === "file:" ? "Browsers block loading the data file from file://. Serve the folder (python3 -m http.server 8080 --bind 127.0.0.1) or use GitHub Pages." : "Could not load data/cve-snapshot.json. Check that the file exists in the repo."; });
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(s => {
+    snap = s;
+
+    if (!s.generated) {
+      $("asof").textContent = "No data yet";
+      $("msg").hidden = false;
+      $("msg").textContent =
+        "No snapshot yet. Run the 'Update CVE snapshot' workflow, or run scripts/fetch_cve.py locally.";
+      return;
+    }
+
+    $("asof").textContent =
+      (s.sample ? "Sample snapshot " : "Snapshot ") +
+      s.generated.replace("T", " ").replace("Z", " UTC");
+
+    drawSummary();
+    drawCharts();
+    draw();
+    $("banner").hidden = !s.sample;
+    ["q", "sev", "sort", "kev"].forEach(id =>
+      $(id).addEventListener("input", draw)
+    );
+  })
+  .catch(error => {
+    console.error("Snapshot load failed:", error);
+    $("asof").textContent = "Unavailable";
+    $("msg").hidden = false;
+    $("msg").textContent = `Could not load snapshot: ${error.message}`;
+  });
+
 </script>
 </body>
 </html>
