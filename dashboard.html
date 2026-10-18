@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'none'; form-action 'none'" />
+<meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://blitzwaresolutions.github.io; base-uri 'none'; form-action 'none'" />
 <title>BlitzThreat EEM - CVE Dashboard</title>
 <meta name="theme-color" content="#000000" />
 <style>
@@ -75,13 +76,12 @@
   <p id="msg" hidden></p>
 </main>
 <footer>
-  <div>&copy; 2026 <a href="https://blitzwaresolutions.github.io/bws">Blitzware Solutions</a> LLC. All Rights Reserved</div>
+  <div>&copy; 2026 <a href="https://BlitzWareSolutions.github.io/bws">BlitzWare Solutions LLC</a> All Rights Reserved</div>
   <div>Data: NIST NVD, CISA KEV, FIRST EPSS &middot; Powered By OSINT</div>
 </footer>
-
 <script>
 /* Client-side gate for the demo flow only. Real access control needs the backend. */
-if (!sessionStorage.getItem("bt_session")) location.replace("index.html");
+if (!sessionStorage.getItem("bt_session")) location.replace("bteem.html");
 
 const COLORS = { CRITICAL:"var(--crit)", HIGH:"var(--high)", MEDIUM:"var(--med)", LOW:"var(--low)", UNSCORED:"var(--uns)" };
 const $ = id => document.getElementById(id);
@@ -166,9 +166,9 @@ function draw() {
   });
   $("msg").hidden = list.length > 0; $("msg").textContent = "No CVEs match these filters.";
 }
-
-fetch("data/cve-snapshot.json", { cache:"no-cache" }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(s => {
-  snap = s;
+fetch("https://blitzwaresolutions.github.io/bws/data/cve-snapshot.json", {
+  cache: "no-cache"
+})
   if (!s.generated) { $("asof").textContent = "No data yet"; $("msg").hidden = false;
     $("msg").textContent = "No snapshot yet. Run the 'Update CVE snapshot' workflow, or run scripts/fetch_cve.py locally."; return; }
   $("asof").textContent = (s.sample ? "Sample snapshot " : "Snapshot ") + s.generated.replace("T", " ").replace("Z", " UTC");
